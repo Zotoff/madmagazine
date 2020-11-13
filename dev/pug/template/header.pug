@@ -1,0 +1,120 @@
+include ../mixins.pug
+header.header
+  .container
+    nav.header_nav
+      .header_nav_brand
+        a(href="")
+          img(src="img/mad-logo.svg", alt="")
+        p MAD® Magazine. Умные в тренде
+      .header_nav_middle
+        a(href="").nav_item Курсы
+        a(href="").nav_item Журнал
+      .header_nav_right
+        a(href="#subscribe").nav_item Подписка
+        a(href="").nav_search
+          img(src="img/icons/mad-search.svg", alt="")
+        a(href="").nav_btn Кабинет
+    nav.header_nav_mob
+      .header_nav_brand
+        a(href="")
+          img(src="img/mad-logo.svg", alt="")
+      .header_nav_middle
+        a(href="").nav_search
+          img(src="img/icons/mad-search.svg", alt="")
+        a(href="").nav_btn Кабинет
+      .header_nav_right
+        a(href="").header_nav_hamburger#headerMobileNav
+          span
+          span
+          span
+    .header_menu_mob#headerMobileMenu
+      .header_menu_close
+        a(href="")#headerMobileClose
+          span
+          span
+          span
+      .mobile_menu_buttons
+        a.btn.mobile_subscribe_btn(href="#subscribe") Подписка
+        a.btn.mobile_cabinet_btn(href="") Кабинет
+      .mobile_menu_nav
+        .mobile_menu_nav_block
+          a().footer_top_nav_heading MAD
+          ul
+            li
+              a(href="") Об Академии
+            li
+              a(href="") Обучение
+            li
+              a(href="") Работа в Академии
+            li
+              a(href="") Партнеры
+        .mobile_menu_nav_block
+          a().footer_top_nav_heading Журнал
+          ul
+            li
+              a(href="") Новичкам
+            li
+              a(href="") Предпринимателям
+            li
+              a(href="") Маркетологам
+            li
+              a(href="") Руководителям
+            li.mobile_nav_tests
+              a(href="") Тесты
+        .mobile_menu_nav_block
+          a().footer_top_nav_heading Информация
+          ul
+            li
+              a(href="") Условия публикаций
+            li
+              a(href="") Партнерская программа
+            li
+              a(href="") Курсы
+            li
+              a(href="") Отзывы
+            li
+              a(href="") Истории выпускников
+            li
+              a(href="") Лицензии
+        .mobile_menu_nav_block
+          a().footer_top_nav_heading Контакты
+          ul
+            li
+              a(href="") Москва,<br />ул. Садовническая, дом 54,<br />строение 2
+            li
+              a(href="tel:+74959847500") +7 (495) 984—7500
+            li.mobile_open_hours
+              p Мы открыты каждый день
+              p 10:00—21:00
+        .mobile_menu_nav_block.mobile_menu_nav_scheme
+          ul
+            li
+              a(href="") Схема проезда
+            li
+              a(href="") Написать
+      .mobile_menu_social
+        ul
+          li
+            a(href="") Facebook
+          li
+            a(href="") Vkontakte
+          li
+            a(href="") Instagram
+          li
+            a(href="") Youtube
+
+    .header_slogan
+      h1.header_slogan_heading.text--uppercase Mad<br />Magazine
+      h2.header_slogan_subheading Журнал<br />Masters Academy in Digital<br />о&nbsp;digital, маркетинге, бизнесе<br />и&nbsp;менеджменте.
+    .header_bottom
+      a(href="").header_bottom_tag Материалы и руководства
+      .header_bottom_category
+        ul
+          li
+            a(href="") Новичкам
+          li
+            a(href="") Предпринимателям
+          li
+            a(href="") Маркетологам
+          li
+            a(href="") Руководителям
