@@ -12,8 +12,25 @@
     <meta property="og:title" content="MAD Website"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://mad.ru"/>
-    <meta property="og:image" content="/img/barnetbs_og.png"/>
+    <meta property="og:image" content=""/>
     <title>MAD Website</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/favicons/apple-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/favicons/apple-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/favicons/apple-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/favicons/apple-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/favicons/apple-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/favicons/apple-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/favicons/apple-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/favicons/apple-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/favicons/apple-icon-180x180.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/icons/favicons//android-icon-192x192.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicons//favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/icons/favicons//favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicons//favicon-16x16.png"/>
+    <link rel="manifest" href="/img/icons/favicons//manifest.json"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/img/icons/favicons//ms-icon-144x144.png"/>
+    <meta name="theme-color" content="#ffffff"/>
   </head>
   <body>
     <header class="header">
@@ -22,7 +39,7 @@
           <div class="header_nav_brand"><a href=""><img src="img/mad-logo.svg" alt=""/></a>
             <p>MAD® Magazine. Умные в тренде</p>
           </div>
-          <div class="header_nav_middle"><a class="nav_item" href="">Курсы</a><a class="nav_item" href="">Журнал</a></div>
+          <div class="header_nav_middle"><a class="nav_item" href="">Курсы</a><a class="nav_item nav_item--active" href="">Журнал</a></div>
           <div class="header_nav_right"><a class="nav_item" href="#subscribe">Подписка</a><a class="nav_search" href=""><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="">Кабинет</a></div>
         </nav>
         <nav class="header_nav_mob">
@@ -32,7 +49,7 @@
         </nav>
         <div class="header_menu_mob" id="headerMobileMenu">
           <div class="header_menu_close"><a href="" id="headerMobileClose"><span></span><span></span><span></span></a></div>
-          <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="#subscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="">Кабинет</a></div>
+          <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="#subscribe" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
           <div class="mobile_menu_nav">
             <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">MAD</a>
               <ul>
@@ -61,8 +78,8 @@
                 <li><a href="">Лицензии</a></li>
               </ul>
             </div>
-            <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">Контакты</a>
-              <ul>
+            <div class="mobile_menu_nav_block mobile_menu_nav_contacts_block"><a class="footer_top_nav_heading">Контакты</a>
+              <ul class="mobile_menu_nav_contacts">
                 <li><a href="">Москва,<br />ул. Садовническая, дом 54,<br />строение 2</a></li>
                 <li><a href="tel:+74959847500">+7 (495) 984—7500</a></li>
                 <li class="mobile_open_hours">
@@ -147,7 +164,7 @@
               <form method="POST" action="">
                 <input type="email" placeholder="Email"/>
                 <div class="footer_writeus_button">
-                  <p>Подписаться на&nbsp;бесплатные знания</p><a href="">OK</a>
+                  <p>Подписка на&nbsp;бесплатные знания</p><a href="">OK</a>
                 </div>
               </form>
             </div>
@@ -175,9 +192,9 @@
           </div>
           <div class="footer_mob_middle"><a id="subscribe" name="subscribe"></a>
             <form method="POST" action="">
-              <input type="email" placeholder="Email"/>
+              <input type="email" placeholder="Email" tabindex="0"/>
               <div class="footer_writeus_button">
-                <p>Подписаться на&nbsp;бесплатные знания</p><a href="">OK</a>
+                <p>Подписка на&nbsp;бесплатные знания</p><a href="">OK</a>
               </div>
             </form>
           </div>

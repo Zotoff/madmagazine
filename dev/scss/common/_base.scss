@@ -12,6 +12,8 @@
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Sections
@@ -427,15 +429,16 @@ body {
 }
 
 .container {
+  width: 100%;
+  max-width: 1600px;
+
   padding-top: 26px;
-  @media (min-width: 320px) {
-    width: 90%;
-  }
-  @media (min-width: 1200px) {
-    width: 90%;
-  }
-  @media (min-width: 1700px) {
-    max-width: 1600px;
+  padding-bottom: 26px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @media (max-width: 768px) {
+    padding: 15px;
   }
 }
 

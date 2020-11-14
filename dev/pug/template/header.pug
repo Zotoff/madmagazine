@@ -8,7 +8,7 @@ header.header
         p MAD® Magazine. Умные в тренде
       .header_nav_middle
         a(href="").nav_item Курсы
-        a(href="").nav_item Журнал
+        a(href="").nav_item.nav_item--active Журнал
       .header_nav_right
         a(href="#subscribe").nav_item Подписка
         a(href="").nav_search
@@ -34,8 +34,8 @@ header.header
           span
           span
       .mobile_menu_buttons
-        a.btn.mobile_subscribe_btn(href="#subscribe") Подписка
-        a.btn.mobile_cabinet_btn(href="") Кабинет
+        a.btn.mobile_subscribe_btn(href="#subscribe")#headerMobileSubscribe Подписка
+        a.btn.mobile_cabinet_btn(href="")#headerMobileCabinet Кабинет
       .mobile_menu_nav
         .mobile_menu_nav_block
           a().footer_top_nav_heading MAD
@@ -76,9 +76,9 @@ header.header
               a(href="") Истории выпускников
             li
               a(href="") Лицензии
-        .mobile_menu_nav_block
+        .mobile_menu_nav_block.mobile_menu_nav_contacts_block
           a().footer_top_nav_heading Контакты
-          ul
+          ul.mobile_menu_nav_contacts
             li
               a(href="") Москва,<br />ул. Садовническая, дом 54,<br />строение 2
             li
