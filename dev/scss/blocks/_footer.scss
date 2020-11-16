@@ -75,9 +75,13 @@ footer {
       margin-bottom: 24px;
         &:hover {
           cursor: pointer;
+          text-decoration: none;
+          color: $bg-rose;
         }
         &:focus {
           cursor: pointer;
+          text-decoration: none;
+          color: $bg-rose;
         }
     }
   }
