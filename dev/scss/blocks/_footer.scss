@@ -26,7 +26,18 @@ footer {
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
-      max-width: 360px;
+      &:nth-child(1) {
+        width: 360px;
+      }
+      &:nth-child(2) {
+        width: 400px;
+      }
+      &:nth-child(3) {
+        width: 400px;
+      }
+      &:last-child {
+        width: 360px;
+      }
       & ul {
         list-style: none;
         margin-left: 0px;
@@ -37,20 +48,19 @@ footer {
           margin-bottom: 10px;
           & a {
             font-size: 1.25em;
-            text-decoration: none;
-            border-bottom: 1px solid $bg-basicgrey;
-            padding-bottom: 2px;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
             color: $bg-basicgrey;
             transition: all .2s ease-in;
             &:hover {
               cursor: pointer;
-              border-bottom: 1px solid transparent;
               color: $bg-rose;
+              text-decoration: none;
             }
             &:focus {
               cursor: pointer;
-              border-bottom: 1px solid transparent;
               color: $bg-rose;
+              text-decoration: none;
             }
           }
         }
@@ -58,19 +68,16 @@ footer {
     }
     &_heading {
       font-size: 1.25em;
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
       color: #ffffff;
-      border-bottom: 1px solid #ffffff;
-      padding-bottom: 2px;
       transition: all .2s ease-in;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
         &:hover {
           cursor: pointer;
-          border-bottom: 1px solid transparent;
         }
         &:focus {
           cursor: pointer;
-          border-bottom: 1px solid transparent;
         }
     }
   }
@@ -100,7 +107,7 @@ footer {
       align-items: flex-end;
       justify-content: space-between;
       flex-wrap: wrap;
-      width: 100%;
+      width: 95%;
       height: auto;
     }
     &_btn {
@@ -118,6 +125,7 @@ footer {
       &:hover {
         color: #000000;
         background: #ffffff;
+        text-decoration: none;
       }
     }
   }
@@ -158,19 +166,18 @@ footer {
       font-size: 1.25em;
       margin-bottom: 0px;
       color: $bg-basicgrey;
-      text-decoration: none;
-      border-bottom: 1px solid $bg-basicgrey;
-      padding-bottom: 2px;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
       transition: all .2s ease-in;
       &:hover {
         cursor: pointer;
         color: $bg-rose;
-        border-bottom: 1px solid transparent;
+        text-decoration: none;
       }
       &:focus {
         cursor: pointer;
         color: $bg-rose;
-        border-bottom: 1px solid transparent;
+        text-decoration: none;
       }
     }
   }
@@ -265,6 +272,7 @@ footer {
       & a {
         font-size: 0.75em;
         text-decoration: underline;
+        text-decoration-skip-ink: none;
         color: $bg-basicgrey;
         cursor: pointer;
         transition: all .2s ease-in;
@@ -356,6 +364,9 @@ footer {
   height: auto;
   margin-bottom: 40px;
 }
+.footer_mob_bottom {
+  margin-bottom: 0px;
+}
 .footer_mob_top {
   & .footer_bottom_buttons {
     align-items: center;
@@ -365,6 +376,9 @@ footer {
 .footer_mob_middle {
   & form {
     width: 100%;
+    @media (max-width: 767.98px) {
+      width: 360px;
+    }
   }
   & input[type=email] {
     width: 100%;

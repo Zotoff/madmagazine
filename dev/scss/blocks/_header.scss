@@ -11,6 +11,8 @@
     justify-content: flex-start;
     width: 100%;
     height: auto;
+    position: relative;
+    z-index: 100;
     &_brand {
       width: 275px;
       height: auto;
@@ -55,15 +57,17 @@
     }
   }
   &_slogan {
+    margin-top: 10px;
     &_heading {
       color: $bg-black;
-      margin-top: 27px;
-      margin-bottom: 40px;
+      margin-top: 0px;
+      margin-bottom: 0px;
       line-height: .8em;
       font-weight: 400;
       position: relative;
-      left: -25px;
-      letter-spacing: -18px;
+      left: -20px;
+      letter-spacing: -15px;
+      z-index: 50;
       @media (min-width: 1600px) {
         font-size: 320px;
       }
@@ -74,7 +78,9 @@
       color: $bg-black;
       letter-spacing: -2px;
       text-transform: uppercase;
+      margin-top: 27px;
       margin-bottom: 40px;
+      line-height: 60px;
     }
   }
   &_bottom {
@@ -106,20 +112,18 @@
             font-size: 1.25em;
             color: $bg-black;
             text-decoration: none;
-            border-bottom: 1px solid #000000;
-            padding-bottom: 2px;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
             transition: all .2s ease-in;
             &:hover,
             &:focus {
               cursor: pointer;
               color: $bg-rose;
               text-decoration: none;
-              border-bottom: none;
             }
             &--active {
               color: $bg-rose;
               text-decoration: none;
-              border-bottom: none;
             }
           }
         }
@@ -131,23 +135,20 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: #000000;
-  border-bottom: 1px solid #000000;
-  padding-bottom: 2px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
   transition: all .2s ease-in;
   margin-right: 157px;
   text-transform: uppercase;
-  text-decoration: none;
   &:hover,
   &:focus {
     cursor: pointer;
     text-decoration: none;
-    border-bottom: none;
     color: $bg-rose;
   }
   &--active {
     color: $bg-rose;
     text-decoration: none;
-    border-bottom: none;
   }
 }
 .nav_btn {
@@ -171,6 +172,7 @@
     cursor: pointer;
     background-color: $bg-rose;
     color: #ffffff;
+    text-decoration: none;
   }
 }
 .nav_search {
@@ -287,6 +289,9 @@
   .header_nav {
     display: none;
   }
+  .header_slogan {
+    margin-top: 75px;
+  }
   .header_slogan_heading {
     letter-spacing: -4px;
   }
@@ -356,12 +361,16 @@
   }
   .header_slogan_heading {
     font-size: 64px;
+    line-height: 1em;
     left: -5px;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
   }
   .header_slogan_subheading {
     font-size: 24px;
+    line-height: 30px;
     letter-spacing: initial;
+    margin-top: 0px;
+    margin-bottom: 30px;
   }
   .header_bottom {
     align-items: flex-start;
@@ -478,6 +487,7 @@
       & ul {
         margin-left: 0px;
         padding-left: 0px;
+        margin-top: 0px;
         & li {
           margin-bottom: 15px;
           & a {
