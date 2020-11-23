@@ -1,0 +1,29 @@
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border-radius: 40px;
+
+  background-color: #F0F0F0;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: $bg-black;
+
+  transition: all .2s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    text-decoration: none;
+  }
+}

@@ -372,9 +372,13 @@ footer {
   margin-bottom: 0px;
 }
 .footer_mob_top {
+  @include flex(center, center);
   & .footer_bottom_buttons {
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
+    & .btn {
+      width: 90%;
+      max-width: 360px;
+    }
   }
 }
 .footer_mob_middle {

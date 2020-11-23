@@ -1,0 +1,54 @@
+.article
+  &__left
+      width: 49%
+      height: auto
+      @include flex(flex-start, flex-start)
+  &__right
+    width: 49%
+    height: auto
+    @include flex(flex-start, flex-start)
+  &__contain
+    margin-bottom: 80px
+    & .article__container
+      height: auto
+      @include flex(space-between, flex-start)
+      padding-top: 40px
+      padding-bottom: 40px
+  &__subheading
+    font-size: 60px
+    line-height: 60px
+    letter-spacing: -0.04em
+    color: #000000
+    text-transform: uppercase
+    font-weight: normal
+    margin-top: 0
+    margin-bottom: 40px
+  &__subheading--alignleft
+      width: 70%
+  & p
+    font-size: 20px
+    line-height: 30px
+    color: #000000
+    margin-top: 0
+    margin-bottom: 45px
+  & h3
+    margin-top: 0
+    margin-bottom: 0
+  & ul
+    font-size: 20px
+    line-height: 30px
+    color: #000000
+    margin-top: 0
+    & li
+      & a
+        text-decoration: underline
+        @include base-transition
+        text-decoration-skip-ink: none
+        color: #000000
+        &:hover
+          color: $bg-rose
+          text-decoration: none
+          cursor: pointer
+  &__intro
+    & .article__container
+      @include flex(space-between, flex-start)

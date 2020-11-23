@@ -1,0 +1,211 @@
+.course-promo {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  position: relative;
+  background-color: $bg-black;
+
+  @include mad-mobile() {
+    min-height: 480px;
+  }
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  &__container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 1000;
+  }
+  &__top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 150px;
+
+    @include mad-mobile() {
+      margin-bottom: 120px;
+    }
+  }
+  &__subheading {
+    color: #ffffff;
+    margin-top: 0;
+    @include mad-mobile() {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+  &__middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 696px;
+    height: 30px;
+    margin: 0px auto;
+
+
+    @include mad-tablet() {
+      width: 100%;
+    }
+
+    @include mad-mobile() {
+      width: 100%;
+      height: auto;
+    }
+
+    & .smalltext {
+      color: #ffffff;
+      @include mad-mobile() {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 696px;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 200px;
+
+    @include mad-mobile() {
+      width: 100%;
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 20px;
+      @include flex(flex-start, center);
+    }
+
+    & a {
+        color: #ffffff;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+    }
+  }
+  &__bottom {
+    width: 100%;
+    height: auto;
+    @include flex(space-between, flex-end);
+
+    @include mad-mobile() {
+      @include flex(flex-start, flex-start);
+    }
+  }
+  &__info {
+    width: 60%;
+    height: auto;
+    display: flex;
+    @include flex(flex-start, flex-end);
+
+    @include mad-mobile() {
+      width: 100%;
+      height: auto;
+      @include flex(flex-start, flex-start);
+    }
+
+    & .tag-big {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-right: 40px;
+      @include mad-tablet() {
+        height: auto;
+        width: 20vw;
+        max-width: 120px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      @include mad-mobile() {
+        height: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    & .course-description {
+      color: #ffffff;
+      text-decoration: underline;
+      transition: all .2s ease-in;
+      text-decoration-skip-ink: none;
+
+      font-size: 20px;
+      line-height: 22px;
+
+      @include mad-mobile() {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 20px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: $bg-rose;
+      }
+    }
+  }
+  &__price {
+    width: 250px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-left: 20px;
+
+    @include mad-mobile() {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
+    & .course-price {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 22px;
+
+      @include mad-mobile() {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    & .course-price--old {
+      text-decoration: line-through;
+      margin-right: 15px;
+    }
+  }
+  &__cta {
+    @include mad-mobile() {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__btn {
+    background-color: $bg-rose;
+    color: #ffffff;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #fff;
+      color: $bg-rose;
+    }
+    @include mad-tablet() {
+      width: 20vw;
+    }
+    @include mad-mobile() {
+      width: 90%;
+      max-width: 345px;
+    }
+  }
+}

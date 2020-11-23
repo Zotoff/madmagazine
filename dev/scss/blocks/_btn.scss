@@ -1,0 +1,19 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 358px;
+  height: 60px;
+  border-radius: 30px;
+  transition: all .2s ease-in;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  @media (max-width: 767.98px) {
+    width: 172px;
+    height: 30px;
+    font-size: 10px !important;
+    line-height: 22px !important;
+  }
+}

@@ -1,0 +1,146 @@
+.tagcloud {
+  width: 100%;
+  height: auto;
+  background-color: #000000;
+  padding-top: 34px;
+  padding-bottom: 40px;
+
+  // @include mad-tablet() {
+  //   @include flex(flex-end, center);
+  // }
+
+  &__setup {
+    margin-right: 30px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    color: #ffffff;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    @include mad-tablet() {
+      position: relative;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    @include mad-mobile() {
+      position: relative;
+      left: 0;
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+  }
+  &__container {
+    padding-top: 4px;
+    padding-bottom: 6px;
+    position: relative;
+    @include flex(flex-end, center);
+
+    @include mad-mobile() {
+      @include flex(flex-start, center);
+    }
+  }
+  &__item {
+    width: 100%;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--mob {
+      display: none;
+    }
+
+    @include mad-mobile() {
+      border-bottom: none;
+
+      &--mob {
+        @include flex(center, center);
+      }
+    }
+  }
+  &__tags {
+    width: 80%;
+    height: auto;
+    @include flex(flex-start, center);
+    .tag {
+      margin-right: 5px;
+      border: 1px solid transparent;
+      @include base-transition;
+      @include mad-tablet() {
+        margin-bottom: 5px;
+      }
+      @include mad-mobile() {
+        margin-bottom: 5px;
+
+        height: 30px;
+        font-size: 16px;
+        line-height: 22;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+      }
+      &--active {
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+      }
+    }
+  }
+  &__subscribe {
+    width: 358px;
+    height: 60px;
+
+    @include flex(center, center);
+    @include base-transition;
+
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    font-size: 12px;
+    line-height: 22px;
+    text-transform: uppercase;
+
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+
+    margin-top: 106px;
+
+    @include mad-mobile() {
+      width: 80%;
+      height: 30px;
+      font-size: 10px;
+      line-height: 22px;
+      margin-top: 80px;
+    }
+
+
+
+
+    &:hover {
+      background-color: #fff;
+      color: #000000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,313 @@
+.short-section {
+  width: 100%;
+  height: auto;
+  &--light {
+    background-color: #fff;
+  }
+  &--dark {
+    background-color: #000;
+    & .short-section__left {
+      & h2 {
+        color: #ffffff;
+      }
+    }
+    & .short-section__whom {
+      & p {
+        color: #ffffff;
+      }
+    }
+    & .short-section__description {
+      & p {
+        color: #ffffff;
+      }
+    }
+    & .short-section__social {
+      & .smalltext {
+        color: #ffffff;
+      }
+      & ul {
+        @include mad-mobile() {
+          margin-top: 0;
+        }
+        & li {
+          @include mad-mobile() {
+            margin-bottom: 5px;
+          }
+          & a {
+            color: #ffffff;
+            @include mad-mobile() {
+              font-size: 16px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  &__top,
+  &__bottom {
+    width: 100%;
+    height: auto;
+    @include flex(flex-start, flex-start);
+  }
+  &__bottom {
+    margin-bottom: 80px;
+  }
+  &__left {
+    min-width: 360px;
+    max-width: 360px;
+    @include mad-tablet() {
+      width: 40%;
+      min-width: 40%;
+      max-width: 40%;
+      margin-right: 30px;
+    }
+    @include mad-mobile() {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+    & h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      position: relative;
+      top: -35px;
+
+      @include mad-tablet() {
+      }
+      @include mad-mobile() {
+        font-size: 64px;
+        line-height: 1em;
+        left: 0px;
+        top: 0px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__whom {
+    min-width: 400px;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    & p {
+      font-size: 20px;
+      line-height: 22px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    @include mad-tablet() {
+      width: 10%;
+      min-width: 10%;
+    }
+    @include mad-mobile() {
+      width: 100%;
+      min-width: 100%;
+      margin-bottom: 20px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  &__description {
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 49%;
+
+    & p {
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @include mad-tablet() {
+      width: 60%;
+    }
+    @include mad-mobile() {
+      width: 100%;
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 40px;
+    }
+
+
+  }
+  &__compilation {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 335px;
+    & .smalltext {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    & p:not(.smalltext) {
+      font-size: 20px;
+      line-height: 22px;
+      margin-top: 0;
+      width: 60%;
+
+      @include mad-mobile() {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 35px;
+      }
+    }
+  }
+  &__right {
+    width: 75%;
+    height: auto;
+    @include flex(flex-start, flex-start);
+
+    @include mad-mobile() {
+      width: 100%;
+    }
+  }
+  &__variants {
+    width: 80%;
+    height: auto;
+
+    @include mad-mobile() {
+      width: 100%;
+    }
+
+    @include flex(flex-start, flex-start);
+    & ul {
+      margin-left: 0;
+      padding-left: 0;
+      margin-top: 0;
+      & li {
+        margin-bottom: 5px;
+        & a {
+          font-size: 20px;
+          line-height: 22px;
+          color: #000000;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+          transition: all .2s ease-in;
+          &:hover {
+            cursor: pointer;
+            color: $bg-rose;
+            text-decoration: none;
+          }
+
+          @include mad-mobile() {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+  &__cta {
+    width: 100%;
+    height: auto;
+    @include flex(flex-end, center);
+
+    &--flex-end {
+      @include flex(flex-end, center);
+      flex-direction: row !important;
+      @include mad-mobile() {
+        flex-direction: row;
+        & a {
+          margin-left: initial !important;
+          margin-right: initial !important;
+        }
+      }
+    }
+
+    @include mad-mobile() {
+      @include flex(flex-end, center);
+      flex-direction: column;
+      & a {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        max-width: 172px;
+      }
+      & a:nth-child(1) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__btn {
+    background-color: $bg-black;
+    text-transform: uppercase;
+    color: #ffffff;
+    &:hover {
+      background-color: $bg-rose;
+    }
+  }
+  &__social {
+    @include flex(flex-start, flex-start);
+    flex-wrap: wrap;
+    & .smalltext {
+      margin-bottom: 20px;
+      width: 100%;
+      color: $bg-black;
+    }
+    & ul {
+      padding-left: 0;
+      & li {
+        margin-bottom: 10px;
+        & a {
+          font-size: 20px;
+          line-height: 30px;
+          text-decoration: underline;
+          color: $bg-black;
+          transition: all .2s ease-in;
+          text-decoration-skip-ink: none;
+          &:hover {
+            color: $bg-rose;
+          }
+        }
+      }
+    }
+  }
+  &__authorBtn {
+    background: transparent;
+    text-transform: uppercase;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration-skip-ink: none;
+    margin-right: 40px;
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    @include mad-tablet() {
+      width: 30vw;
+      max-width: 358px;
+    }
+  }
+  &__madBtn {
+    background: $bg-rose;
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    @include mad-tablet() {
+      width: 30vw;
+      max-width: 358px;
+    }
+  }
+}
