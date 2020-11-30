@@ -1,75 +1,182 @@
 main
-  article.article
-    section.article__poster
-      img.article__poster__cover(src="img/main-promo-webinar-2x.png" srcset="img/main-promo-webinar-2x.png 2x, img/main-promo-webinar-4x.png 4x", alt="")
-      .container.article__poster__container
-        .article__poster__top
-          .article__poster__left
-            .article__poster__date
+  section.article__meta--mobile
+      .container
+        .article__meta__left
+          .post-date
               p 08.10.2020
-            .article__poster__length
+        .article__meta__right
+          .post-length
+              p 9 мин
+          .post-views
+              p 24560 просмотров
+  section.article__poster.post-inner#articlePoster
+    figure.wp-block-image
+      img.article__poster__cover(src="img/main-promo-webinar-2x.png" srcset="img/main-promo-webinar-2x.png 2x, img/main-promo-webinar-4x.png 4x", alt="")
+    .container.article__poster__container.article__poster--desktop
+      .article__poster__top
+        .article__poster__left
+          ul.post-meta
+            .post-date
+              p 08.10.2020
+            .post-length
               p 9
                 sup мин
-            a(href="").article__poster__author Андрей Иванов
-          .article__poster__right
-            p.article__poster__views 24560 просмотров
-            a(href="").article__poster__comments 9 комментариев
-            .article__poster__bookmark
-              img(src="img/icons/icon-bookmark.svg")
-              a(href="") Прочесть позже
-        .article__poster__bottom
-          .article__poster__social
-            ul
-              li
-                a(href="")
-                  img(src="img/icons/instagram-share.svg")
-              li
-                a(href="")
-                  img(src="img/icons/vk-share.svg")
-              li
-                a(href="")
-                  img(src="img/icons/fb-share.svg")
-    section.article__contain
-      .container.article__container
-        .article__left
-          h3.article__subheading Содержание статьи
-        .article__right
+            a(href="").post-author Андрей Иванов
+        .article__poster__right
+          p.post-views 24560 просмотров
+          a(href="").post-comment-link 9 комментариев
+          .post-bookmark
+            img(src="img/icons/icon-bookmark.svg")
+            a(href="") Прочесть позже
+      .article__poster__bottom
+        .article__poster__social
           ul
             li
-              a(href="") Что должно входить в аудит интернет-маркетинга?
+              a(href="")
+                img(src="img/icons/instagram-share.svg")
             li
-              a(href="") Общий анализ трафика
+              a(href="")
+                img(src="img/icons/vk-share.svg")
             li
-              a(href="") Анализ контекстной рекламы в Яндекс и Google
+              a(href="")
+                img(src="img/icons/fb-share.svg")
+    .container.article__poster__container.article__poster--mobile
+      .article__poster__top
+        .article__poster__left
+          a(href="").post-author Андрей Иванов
+          a(href="").post-comment-link 9 комментариев
+        .article__poster__right
+          .post-bookmark
+              a(href="")
+                img(src="img/icons/icon-bookmark.svg")
+      .article__poster__bottom
+        .article__poster__social
+          ul
             li
-              a(href="") Анализ сообществ в социальных сетях
+              a(href="")
+                img(src="img/icons/instagram-share.svg")
             li
-              a(href="") Анализ позиционирования и торгового предложения
+              a(href="")
+                img(src="img/icons/vk-share.svg")
             li
-              a(href="") Анализ механик и элементов сайта, влияющих на конверсию
-            li
-              a(href="") Технический аудит сайта
-            li
-              a(href="") Кто должен анализировать интернет-маркетинг?
-    section.article__subheading
-      .container.article__container
-        h3.article__subheading.article__subheading--alignleft В первую очередь бизнесу важны посетители, доход.
-    section.article__intro
-      .container.article__container
-        .article__left
-          p Вступление
-        .article__right
-          p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.
-          p Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.
-    section.article__banner
-      img(src="img/article-image-1x.png", srcset="img/article-image-2x.png 2x, img/article-image-4x.png 4x")
-      .article__container
-        .article__left
-          p.smalltext Название изображения. Краткое примечание
-        .article__right
-          .article__banner__cta
-            a(href="").btn.article__cta__btn
+              a(href="")
+                img(src="img/icons/fb-share.svg")
+  section.article__contain
+    .wp-block-columns
+      .wp-block-column
+        h3.article__subheading Содержание статьи
+      .wp-block-column
+        ul
+          li
+            a(href="") Что должно входить в аудит интернет-маркетинга?
+          li
+            a(href="") Общий анализ трафика
+          li
+            a(href="") Анализ контекстной рекламы в Яндекс и Google
+          li
+            a(href="") Анализ сообществ в социальных сетях
+          li
+            a(href="") Анализ позиционирования и торгового предложения
+          li
+            a(href="") Анализ механик и элементов сайта, влияющих на конверсию
+          li
+            a(href="") Технический аудит сайта
+          li
+            a(href="") Кто должен анализировать интернет-маркетинг?
+  section.article__content
+    .container
+      h3 В первую очередь бизнесу важны посетители, доход.
+    .wp-block-columns
+      .wp-block-column
+        p Вступление
+      .wp-block-column
+        p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.
+        p Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.
+  section.article__banner
+    img(src="img/article-image-1x.png", srcset="img/article-image-2x.png 2x, img/article-image-4x.png 4x")
+    .container.article__container
+      .article__top
+        p.smalltext Название изображения. Краткое примечание
+      .article__bottom
+        a(href="").btn.article__cta__btn Курсы MAD
 
+  section.article__content
+    .container
+      h3 Что должно входить в аудит интернет маркетинга?
+    .wp-block-columns
+      .wp-block-column
+        p А вы знали что?
+      .wp-block-column
+        p В первую очередь бизнесу важны посетители, приносящие доход. Голая посещаемость без совершения покупок и заказов для компании так же бесполезна, как и ее отсутствие. Что делать, если посетителей мало или они нецелевые, подскажет анализ трафика. Системы аналитики Яндекс и Google позволяют узнать, кто приходил на сайт (демографические характеристики аудитории), откуда и по каким ключевым словам, с каких устройств, сколько времени длился визит, какие страницы заинтересовали посетителей, какие целевые действия были выполнены и т. п.
+  section.article__list
+    .article__list__item
+      .container
+        .article__list__left
+          p Общий анализ трафика
+        .article__list__right
+          p 67% сразу после курса решили свои задачи в маркетинге
+    .article__list__item
+      .container
+        .article__list__left
+        .article__list__right
+          p 87% смогли применить свои новые знания и получить результат
+    .article__list__item
+      .container
+        .article__list__left
+        .article__list__right
+          p 50% после окончания курса смогли решить дополнительные задачи, которые изначально не ставили перед началом обучения
+    .article__list__item
+      .container
+        .article__list__left
+        .article__list__right
+          p Более 43% студентов благодаря обучению в MaEd систематизировали свои знания в маркетинге
+    .article__list__item
+      .container
+        .article__list__left
+        .article__list__right
+          p Более 28% студентов узнали новые инструменты
+  section.article__content
+    .container
+      h3 Какие проблемы есть на сайтах компаний застройщиков?
+    .wp-block-columns
+      .wp-block-column
+        p Давайте поговорим
+      .wp-block-column
+        p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.
+        p Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.
+  section.article__slider
+    .container
+      .article__slider__controls#articleSliderControls
+        .article__slider__prev
+          img(src="img/icons/article-slider-arrow.svg")
+        .article__slider__next
+          img(src="img/icons/article-slider-arrow.svg")
+      .article__carousel#articleCarousel
+        .article__carousel__item
+          img(src="img/article-promo-webinar-1x.png")
+        .article__carousel__item
+          img(src="img/article-promo-webinar-1x.png")
+        .article__carousel__item
+          img(src="img/article-promo-webinar-1x.png")
+      .article__slider__nav#articleSliderNav
+        .slider__nav__item
+        .slider__nav__item
+        .slider__nav__item
+  section.article__content
+    .wp-block-columns
+      .wp-block-column
+      .wp-block-column
+        p Теперь юзабилити, плохо проработанные формы заявок и ленивые менеджеры не станут камнем преткновения вашего бизнеса. Сервис проведет клиента по основным разделам сайта, поможет разобраться в условиях. Он покажет, где найти и как заполнить формы обратной связи, а продажи станут меньше зависеть от человеческого фактора и настроения менеджеров в колл-центре.
 
+        p Направление онбординг-помощников уже долгое время существует на западном рынке, с 2012 года оно активно развивается. На наших просторах онбординг только зарождается и встречается в единичных экземплярах у некоторых компаний.
 
+        p Нет, данные сервисы — не панацея. Все еще очень много будет зависеть от грамотно проработанного сайта, правильного контента и заботливых менеджеров. Однако это очень хороший инструмент, который даст вам хороший толчок за короткое время.
+    .wp-block-quote
+      p Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.
+    .wp-block-columns
+      .wp-block-column
+        p Успешность интернет-маркетинга
+      .wp-block-column
+        p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.
 
+        p Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.

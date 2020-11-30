@@ -19,7 +19,7 @@
   text-decoration: none;
   color: $bg-black;
 
-  transition: all .2s ease-in;
+  @include base-transition;
 
   &:hover {
     cursor: pointer;

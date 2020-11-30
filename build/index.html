@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="style/main.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"/>
     <meta name="theme-color" content="#ffffff"/>
     <meta name="description" content="MAD website"/>
     <meta name="keywords" content="MAD website"/>
@@ -33,23 +34,25 @@
     <meta name="theme-color" content="#ffffff"/>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="header_nav">
+    <header class="header" id="mainHeader">
+      <nav class="header_nav">
+        <div class="container">
           <div class="header_nav_brand"><a href=""><img src="img/mad-logo.svg" alt=""/></a>
             <p>MAD® Magazine. Умные в тренде</p>
           </div>
           <div class="header_nav_middle"><a class="nav_item" href="#">Курсы</a><a class="nav_item nav_item--active" href="#">Журнал</a></div>
-          <div class="header_nav_right"><a class="nav_item" href="" id="headerSubscribeButton">Подписка</a><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
-        </nav>
-        <nav class="header_nav_mob">
+          <div class="header_nav_right"><a class="nav_item" href="#subscribe">Подписка</a><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
+        </div>
+      </nav>
+      <nav class="header_nav_mob">
+        <div class="container">
           <div class="header_nav_brand"><a href="#"><img src="img/mad-logo.svg" alt=""/></a></div>
           <div class="header_nav_middle"><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
           <div class="header_nav_right"><a class="header_nav_hamburger" href="#" id="headerMobileNav"><span></span><span></span><span></span></a></div>
-        </nav>
+        </div>
         <div class="header_menu_mob" id="headerMobileMenu">
           <div class="header_menu_close"><a href="#" id="headerMobileClose"><span></span><span></span><span></span></a></div>
-          <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
+          <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="#subscribe" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
           <div class="mobile_menu_nav">
             <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">MAD</a>
               <ul>
@@ -104,11 +107,15 @@
             </ul>
           </div>
         </div>
-        <div class="header_slogan">
+      </nav>
+      <div class="header_slogan">
+        <div class="container">
           <h1 class="header_slogan_heading text--uppercase">Mad Magazine</h1>
           <h2 class="header_slogan_subheading">Журнал<br />Masters Academy in Digital<br />о&nbsp;digital, маркетинге, бизнесе<br />и&nbsp;менеджменте.</h2>
         </div>
-        <div class="header_bottom"><a class="header_bottom_tag" href="">Материалы и руководства</a>
+      </div>
+      <div class="header_bottom">
+        <div class="container"><a class="header_bottom_tag" href="">Материалы и руководства</a>
           <div class="header_bottom_category">
             <ul>
               <li><a href="">Новичкам</a></li>
@@ -384,22 +391,40 @@
           <div class="main-promo__seealso__bottom"><a href="">Еще</a></div>
         </div>
         <div class="main-promo__toplist">
-          <article><img src="img/main-promo-top-1x.png" alt="" loading="lazy" srcset="img/main-promo-top-small.png 1.5x, img/main-promo-top-2x.png 2x, img/main-promo-top-4x.png 4x"/>
-            <div class="main-promo__toplist__top">
-              <p class="toplist__heading">ТОП</p>
-              <p class="smalltext main-promo__toplist__author main-promo__toplist__author--desktop">Сompleto</p>
+          <div class="main-promo__carousel" id="mainPromoCarousel">
+            <div class="main-promo__carousel__item"><img src="img/main-promo-top-1x.png" alt="" loading="lazy" srcset="img/main-promo-top-small.png 1.5x, img/main-promo-top-2x.png 2x, img/main-promo-top-4x.png 4x"/>
+              <div class="main-promo__toplist__top">
+                <p class="toplist__heading">ТОП</p>
+                <p class="smalltext main-promo__toplist__author main-promo__toplist__author--desktop">Сompleto</p>
+              </div>
+              <div class="main-promo__toplist__link">
+                <p class="smalltext main-promo__toplist__author main-promo__toplist__author--mob">Completo</p><a href="">Контент-маркетинг для руководителей</a>
+              </div>
+              <div class="main-promo__toplist__dots">
+                <ul>
+                  <li><a class="main-promo__toplist__dot main-promo__toplist__dot--active" href=""></a></li>
+                  <li><a class="main-promo__toplist__dot" href=""></a></li>
+                  <li><a class="main-promo__toplist__dot" href=""></a></li>
+                </ul>
+              </div>
             </div>
-            <div class="main-promo__toplist__link">
-              <p class="smalltext main-promo__toplist__author main-promo__toplist__author--mob">Completo</p><a href="">Контент-маркетинг для руководителей</a>
+            <div class="main-promo__carousel__item"><img src="img/main-promo-top-1x.png" alt="" loading="lazy" srcset="img/main-promo-top-small.png 1.5x, img/main-promo-top-2x.png 2x, img/main-promo-top-4x.png 4x"/>
+              <div class="main-promo__toplist__top">
+                <p class="toplist__heading">ТОП</p>
+                <p class="smalltext main-promo__toplist__author main-promo__toplist__author--desktop">Сompleto</p>
+              </div>
+              <div class="main-promo__toplist__link">
+                <p class="smalltext main-promo__toplist__author main-promo__toplist__author--mob">Completo</p><a href="">Контент-маркетинг для руководителей</a>
+              </div>
+              <div class="main-promo__toplist__dots">
+                <ul>
+                  <li><a class="main-promo__toplist__dot main-promo__toplist__dot--active" href=""></a></li>
+                  <li><a class="main-promo__toplist__dot" href=""></a></li>
+                  <li><a class="main-promo__toplist__dot" href=""></a></li>
+                </ul>
+              </div>
             </div>
-            <div class="main-promo__toplist__dots">
-              <ul>
-                <li><a class="main-promo__toplist__dot main-promo__toplist__dot--active" href=""></a></li>
-                <li><a class="main-promo__toplist__dot" href=""></a></li>
-                <li><a class="main-promo__toplist__dot" href=""></a></li>
-              </ul>
-            </div>
-          </article>
+          </div>
         </div>
         <div class="main-promo__webinar"><img src="img/main-promo-webinar-1x.png" alt="" loading="lazy" srcset="img/main-promo-webinar-small.png 1.5x, img/main-promo-webinar-2x.png 2x, img/main-promo-webinar-4x.png 4x"/>
           <div class="main-promo__webinar__top">
@@ -608,6 +633,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="js/bundle.js"></script>
   </body>
 </html>

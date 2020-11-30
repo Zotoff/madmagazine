@@ -1,0 +1,85 @@
+section.comments
+  .comments__disclaimer
+    .container.comments__container
+      .comments__left
+        p.disclaimer Дисклеймер
+      .comments__right
+        p.copyright © MAD Magazine. При полном или частичном копировании материала ссылка на первоисточник обязательна.
+        .comments__info
+          p Нашли ошибку? Выделите фрагмент и нажмите CTRL+Enter
+          .comments__info__subscribe
+            p Мнение автора и редакции может не совпадать.
+            p Хотите написать колодку для MAD? Читайте наши&nbsp;
+              a(href="") условия публикации.
+            p Чтобы быть в курсе всех новостей и читать новые статьи, присоединяйтесь к&nbsp;
+              a(href="", target="_blank") Телеграм—каналу
+  .comments__filter
+    .container.comments__container
+      .comments__left
+        h3.comments__heading 09
+        p.comments__text.display--desktop Комментариев
+      .comments__right
+        p.comments__text.display--mobile Комментариев
+        .comments__filter
+          a(href="").comments__filter__link.comments__filter__link--active#commentsFilterDate По дате
+          a(href="").comments__filter__link#commentsFilterRating По рейтингу
+  .comments__block.comments__block--desktop
+    .comments__item
+      .container.comments__container
+        .comments__left
+          p.comments__views +67
+          .comments__like
+            a(href="").comments__like__btn.comments__like__btn--like.comments__like__btn--active Нравится
+            a(href="").comments__like__btn.comments__like__btn--dislike Не нравится
+          .comments__author
+            a(href="").comments__author__img
+              img(src="img/comment-author-img.png")
+            p.comments__author__name Андрей Петров
+        .comments__right
+          .comment
+            p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.
+          .comment__date
+            p 24 сентября 2020
+    .comments__item
+      .container.comments__container
+        .comments__left
+          p.comments__views +67
+          .comments__like
+            a(href="").comments__like__btn.comments__like__btn--like.comments__like__btn--active Нравится
+            a(href="").comments__like__btn.comments__like__btn--dislike Не нравится
+          .comments__author
+            a(href="").comments__author__img
+              img(src="img/comment-author-img.png")
+            p.comments__author__name Андрей Петров
+        .comments__right
+          .comment
+            p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.
+          .comment__date
+            p 24 сентября 2020
+  .comments__block.comments__block--mobile
+    .comments__item
+      .container.comments__container
+        .comments__top
+          .comments__author
+            a(href="").comments__author__img
+              img(src="img/comment-author-img.png")
+            p.comments__author__name Андрей Петров
+          p.comments__views +67
+        .comments__middle
+          .comment
+            p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.
+        .comments__bottom
+          .comments__like
+            a(href="").comments__like__btn.comments__like__btn--like.comments__like__btn--active Нравится
+            a(href="").comments__like__btn.comments__like__btn--dislike Не нравится
+          .comment__date
+            p 24 сентября 2020
+  .comments__block.comments__block__form
+    .container.comments__container
+        .comments__left
+          p Ваш комментарий
+        .comments__right
+          form(method="POST", action="").comments__form#commentsForm
+            label(for="comment")
+            textarea(name="comment", id="comment")
+            button(type="submit").btn.comments__submit Отправить

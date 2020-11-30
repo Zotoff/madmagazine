@@ -1,18 +1,24 @@
 .header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  & .container {
-    padding-top: 25px;
-  }
+  @include flex(space-between, flex-start);
+  width: 100%;
+  height: auto;
   &_nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(space-between, flex-start);
     width: 100%;
     height: auto;
     position: relative;
     z-index: 100;
+    background: #ffffff;
+    .container {
+      padding-top: 25px;
+      @include flex(flex-start, center);
+      @include mad-tablet() {
+        @include flex(space-between, center);
+      }
+      @include mad-mobile() {
+        @include flex(space-between, center);
+      }
+    }
     &_brand {
       width: 275px;
       height: auto;
@@ -30,16 +36,18 @@
       }
       & p {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 12px;
+        font-size: 12px !important;
+        line-height: 1em !important;
         color: $bg-black;
-        margin-top: 0px;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
       }
     }
     &_middle {
       width: 250px;
       display: flex;
       justify-content: space-between;
-      margin-right: 310px;
+      margin-right: 305px;
       & .nav_item:nth-child(2) {
           margin-right: 0px;
       }
@@ -58,6 +66,8 @@
   }
   &_slogan {
     margin-top: 10px;
+    width: 100%;
+    height: auto;
     &_heading {
       color: $bg-black;
       margin-top: 0px;
@@ -84,9 +94,12 @@
     }
   }
   &_bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(space-between, center);
+    width: 100%;
+    height: auto;
+    .container {
+      @include flex(space-between, center);
+    }
     &_tag {
       font-size: 0.75em;
       color: $bg-black;
@@ -182,6 +195,9 @@
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .header_nav {
     justify-content: space-between;
+    & .container {
+      @include flex(space-between, center);
+    }
   }
   .header_nav_brand {
     margin-right: initial;
@@ -192,6 +208,7 @@
   .header_nav_right {
     justify-content: space-between;
     flex-flow: row;
+    width: 40%;
   }
   .header_nav_right .nav_item {
     margin-right: initial;
@@ -296,10 +313,12 @@
     letter-spacing: -4px;
   }
   .header_nav_mob {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    @include flex(space-between, center);
+    .container {
+      @include flex(space-between, center);
+    }
     .header_nav_brand {
       width: 87px;
       margin-right: initial;
@@ -427,7 +446,7 @@
   padding-right: 15px;
   padding-top: 120px;
 
-  z-index: 100;
+  z-index: 9999;
   & .header_menu_close {
     position: absolute;
     top: 25px;
@@ -596,5 +615,61 @@
         bottom: 6px;
       }
     }
+  }
+}
+
+.header--smallHeight {
+  height: 80px;
+  min-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation-name: changeHeight;
+  animation-duration: .2s;
+  z-index: 99999;
+  @include mad-mobile() {
+    & .header_nav {
+      display: none !important;
+    }
+    & .header_nav_mob {
+      display: flex !important;
+      background-color: #fff;
+      height: 80px;
+    }
+  }
+
+  .breadcrumbs {
+    display: none;
+  }
+  .entry-header {
+    display: none;
+  }
+  .entry-categories {
+    display: none;
+  }
+  .header_nav {
+    height: 80px;
+    @include flex(space-between, center);
+  }
+  .header_slogan {
+    display: none;
+  }
+  .header_bottom {
+    display: none;
+  }
+  .header_nav .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes changeHeight {
+  from {
+    min-height: 600px;
+    height: 600px;
+  }
+  to {
+    min-height: 80px;
+    height: 80px;
   }
 }

@@ -33,112 +33,157 @@
     <meta name="theme-color" content="#ffffff"/>
   </head>
   <body>
-    <header class="header article-header">
-      <div class="container">
+    <article class="post type-post status-publish format-standard hentry article">
+      <header class="header article__header" id="mainHeader">
         <nav class="header_nav">
-          <div class="header_nav_brand"><a href=""><img src="img/mad-logo.svg" alt=""/></a>
-            <p>MAD® Magazine. Умные в тренде</p>
+          <div class="container">
+            <div class="header_nav_brand"><a href=""><img src="img/mad-logo.svg" alt=""/></a>
+              <p>MAD® Magazine. Умные в тренде</p>
+            </div>
+            <div class="header_nav_middle"><a class="nav_item" href="#">Курсы</a><a class="nav_item nav_item--active" href="#">Журнал</a></div>
+            <div class="header_nav_right"><a class="nav_item" href="#subscribe">Подписка</a><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
           </div>
-          <div class="header_nav_middle"><a class="nav_item" href="#">Курсы</a><a class="nav_item nav_item--active" href="#">Журнал</a></div>
-          <div class="header_nav_right"><a class="nav_item" href="#subscribe">Подписка</a><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
         </nav>
         <nav class="header_nav_mob">
-          <div class="header_nav_brand"><a href="#"><img src="img/mad-logo.svg" alt=""/></a></div>
-          <div class="header_nav_middle"><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
-          <div class="header_nav_right"><a class="header_nav_hamburger" href="#" id="headerMobileNav"><span></span><span></span><span></span></a></div>
-        </nav>
-        <div class="header_menu_mob" id="headerMobileMenu">
-          <div class="header_menu_close"><a href="#" id="headerMobileClose"><span></span><span></span><span></span></a></div>
-          <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="#subscribe" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
-          <div class="mobile_menu_nav">
-            <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">MAD</a>
-              <ul>
-                <li><a href="">Об Академии</a></li>
-                <li><a href="">Обучение</a></li>
-                <li><a href="">Работа в Академии</a></li>
-                <li><a href="">Партнеры</a></li>
-              </ul>
+          <div class="container">
+            <div class="header_nav_brand"><a href="#"><img src="img/mad-logo.svg" alt=""/></a></div>
+            <div class="header_nav_middle"><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
+            <div class="header_nav_right"><a class="header_nav_hamburger" href="#" id="headerMobileNav"><span></span><span></span><span></span></a></div>
+          </div>
+          <div class="header_menu_mob" id="headerMobileMenu">
+            <div class="header_menu_close"><a href="#" id="headerMobileClose"><span></span><span></span><span></span></a></div>
+            <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="#subscribe" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
+            <div class="mobile_menu_nav">
+              <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">MAD</a>
+                <ul>
+                  <li><a href="">Об Академии</a></li>
+                  <li><a href="">Обучение</a></li>
+                  <li><a href="">Работа в Академии</a></li>
+                  <li><a href="">Партнеры</a></li>
+                </ul>
+              </div>
+              <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">Журнал</a>
+                <ul>
+                  <li><a href="">Новичкам</a></li>
+                  <li><a href="">Предпринимателям</a></li>
+                  <li><a href="">Маркетологам</a></li>
+                  <li><a href="">Руководителям</a></li>
+                  <li class="mobile_nav_tests"><a href="">Тесты</a></li>
+                </ul>
+              </div>
+              <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">Информация</a>
+                <ul>
+                  <li><a href="">Условия публикаций</a></li>
+                  <li><a href="">Партнерская программа</a></li>
+                  <li><a href="">Курсы</a></li>
+                  <li><a href="">Отзывы</a></li>
+                  <li><a href="">Истории выпускников</a></li>
+                  <li><a href="">Лицензии</a></li>
+                </ul>
+              </div>
+              <div class="mobile_menu_nav_block mobile_menu_nav_contacts_block"><a class="footer_top_nav_heading">Контакты</a>
+                <ul class="mobile_menu_nav_contacts">
+                  <li><a href="">Москва,<br />ул. Садовническая, дом 54,<br />строение 2</a></li>
+                  <li><a href="tel:+74959847500">+7 (495) 984—7500</a></li>
+                  <li class="mobile_open_hours">
+                    <p>Мы открыты каждый день</p>
+                    <p>10:00—21:00</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="mobile_menu_nav_block mobile_menu_nav_scheme">
+                <ul>
+                  <li><a href="">Схема проезда</a></li>
+                  <li><a href="">Написать</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">Журнал</a>
+            <div class="mobile_menu_social">
               <ul>
-                <li><a href="">Новичкам</a></li>
-                <li><a href="">Предпринимателям</a></li>
-                <li><a href="">Маркетологам</a></li>
-                <li><a href="">Руководителям</a></li>
-                <li class="mobile_nav_tests"><a href="">Тесты</a></li>
-              </ul>
-            </div>
-            <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">Информация</a>
-              <ul>
-                <li><a href="">Условия публикаций</a></li>
-                <li><a href="">Партнерская программа</a></li>
-                <li><a href="">Курсы</a></li>
-                <li><a href="">Отзывы</a></li>
-                <li><a href="">Истории выпускников</a></li>
-                <li><a href="">Лицензии</a></li>
-              </ul>
-            </div>
-            <div class="mobile_menu_nav_block mobile_menu_nav_contacts_block"><a class="footer_top_nav_heading">Контакты</a>
-              <ul class="mobile_menu_nav_contacts">
-                <li><a href="">Москва,<br />ул. Садовническая, дом 54,<br />строение 2</a></li>
-                <li><a href="tel:+74959847500">+7 (495) 984—7500</a></li>
-                <li class="mobile_open_hours">
-                  <p>Мы открыты каждый день</p>
-                  <p>10:00—21:00</p>
-                </li>
-              </ul>
-            </div>
-            <div class="mobile_menu_nav_block mobile_menu_nav_scheme">
-              <ul>
-                <li><a href="">Схема проезда</a></li>
-                <li><a href="">Написать</a></li>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Vkontakte</a></li>
+                <li><a href="">Instagram</a></li>
+                <li><a href="">Youtube</a></li>
               </ul>
             </div>
           </div>
-          <div class="mobile_menu_social">
+        </nav>
+        <div class="breadcrumbs">
+          <div class="container">
             <ul>
+              <li><a href="">Главная</a></li>
+              <li><a href="">Предпринимателям</a></li>
               <li><a href="">Facebook</a></li>
-              <li><a href="">Vkontakte</a></li>
-              <li><a href="">Instagram</a></li>
-              <li><a href="">Youtube</a></li>
             </ul>
           </div>
         </div>
-        <div class="breadcrumbs">
-          <ul>
-            <li><a href="">Главная</a></li>
-            <li><a href="">Предпринимателям</a></li>
-            <li><a href="">Facebook</a></li>
-          </ul>
+        <div class="entry-header">
+          <div class="container">
+            <h2 class="entry-title">10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет</h2>
+          </div>
         </div>
-        <div class="header_slogan">
-          <h2 class="article__header">10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет</h2>
+        <div class="entry-categories">
+          <div class="container">
+            <ul class="entry-categories-inner">
+              <li><a href="">Маркетинг</a></li>
+              <li><a href="">SEO</a></li>
+              <li><a href="">Facebook</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="article-tags">
-          <ul>
-            <li><a href="">Маркетинг</a></li>
-            <li><a href="">SEO</a></li>
-            <li><a href="">Facebook</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <main>
-      <article class="article">
-        <section class="article__poster"><img class="article__poster__cover" src="img/main-promo-webinar-2x.png" srcset="img/main-promo-webinar-2x.png 2x, img/main-promo-webinar-4x.png 4x" alt=""/>
-          <div class="container article__poster__container">
+      </header>
+      <main>
+        <section class="article__meta--mobile">
+          <div class="container">
+            <div class="article__meta__left">
+              <div class="post-date">
+                <p>08.10.2020</p>
+              </div>
+            </div>
+            <div class="article__meta__right">
+              <div class="post-length">
+                <p>9 мин</p>
+              </div>
+              <div class="post-views">
+                <p>24560 просмотров</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="article__poster post-inner" id="articlePoster">
+          <figure class="wp-block-image"><img class="article__poster__cover" src="img/main-promo-webinar-2x.png" srcset="img/main-promo-webinar-2x.png 2x, img/main-promo-webinar-4x.png 4x" alt=""/></figure>
+          <div class="container article__poster__container article__poster--desktop">
             <div class="article__poster__top">
               <div class="article__poster__left">
-                <div class="article__poster__date">
-                  <p>08.10.2020</p>
-                </div>
-                <div class="article__poster__length">
-                  <p>9<sup>мин</sup></p>
-                </div><a class="article__poster__author" href="">Андрей Иванов</a>
+                <ul class="post-meta">
+                  <div class="post-date">
+                    <p>08.10.2020</p>
+                  </div>
+                  <div class="post-length">
+                    <p>9<sup>мин</sup></p>
+                  </div><a class="post-author" href="">Андрей Иванов</a>
+                </ul>
               </div>
               <div class="article__poster__right">
-                <p class="article__poster__views">24560 просмотров</p><a class="article__poster__comments" href="">9 комментариев</a>
-                <div class="article__poster__bookmark"><img src="img/icons/icon-bookmark.svg"/><a href="">Прочесть позже</a></div>
+                <p class="post-views">24560 просмотров</p><a class="post-comment-link" href="">9 комментариев</a>
+                <div class="post-bookmark"><img src="img/icons/icon-bookmark.svg"/><a href="">Прочесть позже</a></div>
+              </div>
+            </div>
+            <div class="article__poster__bottom">
+              <div class="article__poster__social">
+                <ul>
+                  <li><a href=""><img src="img/icons/instagram-share.svg"/></a></li>
+                  <li><a href=""><img src="img/icons/vk-share.svg"/></a></li>
+                  <li><a href=""><img src="img/icons/fb-share.svg"/></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container article__poster__container article__poster--mobile">
+            <div class="article__poster__top">
+              <div class="article__poster__left"><a class="post-author" href="">Андрей Иванов</a><a class="post-comment-link" href="">9 комментариев</a></div>
+              <div class="article__poster__right">
+                <div class="post-bookmark"><a href=""><img src="img/icons/icon-bookmark.svg"/></a></div>
               </div>
             </div>
             <div class="article__poster__bottom">
@@ -153,11 +198,11 @@
           </div>
         </section>
         <section class="article__contain">
-          <div class="container article__container">
-            <div class="article__left">
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
               <h3 class="article__subheading">Содержание статьи</h3>
             </div>
-            <div class="article__right">
+            <div class="wp-block-column">
               <ul>
                 <li><a href="">Что должно входить в аудит интернет-маркетинга?</a></li>
                 <li><a href="">Общий анализ трафика</a></li>
@@ -171,34 +216,417 @@
             </div>
           </div>
         </section>
-        <section class="article__subheading">
-          <div class="container article__container">
-            <h3 class="article__subheading article__subheading--alignleft">В первую очередь бизнесу важны посетители, доход.</h3>
+        <section class="article__content">
+          <div class="container">
+            <h3>В первую очередь бизнесу важны посетители, доход.</h3>
           </div>
-        </section>
-        <section class="article__intro">
-          <div class="container article__container">
-            <div class="article__left">
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
               <p>Вступление</p>
             </div>
-            <div class="article__right">
+            <div class="wp-block-column">
               <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
               <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
             </div>
           </div>
         </section>
         <section class="article__banner"><img src="img/article-image-1x.png" srcset="img/article-image-2x.png 2x, img/article-image-4x.png 4x"/>
-          <div class="article__container">
-            <div class="article__left">
+          <div class="container article__container">
+            <div class="article__top">
               <p class="smalltext">Название изображения. Краткое примечание</p>
             </div>
-            <div class="article__right">
-              <div class="article__banner__cta"><a class="btn article__cta__btn" href=""></a></div>
+            <div class="article__bottom"><a class="btn article__cta__btn" href="">Курсы MAD</a></div>
+          </div>
+        </section>
+        <section class="article__content">
+          <div class="container">
+            <h3>Что должно входить в аудит интернет маркетинга?</h3>
+          </div>
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
+              <p>А вы знали что?</p>
+            </div>
+            <div class="wp-block-column">
+              <p>В первую очередь бизнесу важны посетители, приносящие доход. Голая посещаемость без совершения покупок и заказов для компании так же бесполезна, как и ее отсутствие. Что делать, если посетителей мало или они нецелевые, подскажет анализ трафика. Системы аналитики Яндекс и Google позволяют узнать, кто приходил на сайт (демографические характеристики аудитории), откуда и по каким ключевым словам, с каких устройств, сколько времени длился визит, какие страницы заинтересовали посетителей, какие целевые действия были выполнены и т. п.</p>
             </div>
           </div>
         </section>
-      </article>
-    </main>
+        <section class="article__list">
+          <div class="article__list__item">
+            <div class="container">
+              <div class="article__list__left">
+                <p>Общий анализ трафика</p>
+              </div>
+              <div class="article__list__right">
+                <p>67% сразу после курса решили свои задачи в маркетинге</p>
+              </div>
+            </div>
+          </div>
+          <div class="article__list__item">
+            <div class="container">
+              <div class="article__list__left"></div>
+              <div class="article__list__right">
+                <p>87% смогли применить свои новые знания и получить результат</p>
+              </div>
+            </div>
+          </div>
+          <div class="article__list__item">
+            <div class="container">
+              <div class="article__list__left"></div>
+              <div class="article__list__right">
+                <p>50% после окончания курса смогли решить дополнительные задачи, которые изначально не ставили перед началом обучения</p>
+              </div>
+            </div>
+          </div>
+          <div class="article__list__item">
+            <div class="container">
+              <div class="article__list__left"></div>
+              <div class="article__list__right">
+                <p>Более 43% студентов благодаря обучению в MaEd систематизировали свои знания в маркетинге</p>
+              </div>
+            </div>
+          </div>
+          <div class="article__list__item">
+            <div class="container">
+              <div class="article__list__left"></div>
+              <div class="article__list__right">
+                <p>Более 28% студентов узнали новые инструменты</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="article__content">
+          <div class="container">
+            <h3>Какие проблемы есть на сайтах компаний застройщиков?</h3>
+          </div>
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
+              <p>Давайте поговорим</p>
+            </div>
+            <div class="wp-block-column">
+              <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+              <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
+            </div>
+          </div>
+        </section>
+        <section class="article__slider">
+          <div class="container">
+            <div class="article__slider__controls" id="articleSliderControls">
+              <div class="article__slider__prev"><img src="img/icons/article-slider-arrow.svg"/></div>
+              <div class="article__slider__next"><img src="img/icons/article-slider-arrow.svg"/></div>
+            </div>
+            <div class="article__carousel" id="articleCarousel">
+              <div class="article__carousel__item"><img src="img/article-promo-webinar-1x.png"/></div>
+              <div class="article__carousel__item"><img src="img/article-promo-webinar-1x.png"/></div>
+              <div class="article__carousel__item"><img src="img/article-promo-webinar-1x.png"/></div>
+            </div>
+            <div class="article__slider__nav" id="articleSliderNav">
+              <div class="slider__nav__item"></div>
+              <div class="slider__nav__item"></div>
+              <div class="slider__nav__item"></div>
+            </div>
+          </div>
+        </section>
+        <section class="article__content">
+          <div class="wp-block-columns">
+            <div class="wp-block-column"></div>
+            <div class="wp-block-column">
+              <p>Теперь юзабилити, плохо проработанные формы заявок и ленивые менеджеры не станут камнем преткновения вашего бизнеса. Сервис проведет клиента по основным разделам сайта, поможет разобраться в условиях. Он покажет, где найти и как заполнить формы обратной связи, а продажи станут меньше зависеть от человеческого фактора и настроения менеджеров в колл-центре.</p>
+              <p>Направление онбординг-помощников уже долгое время существует на западном рынке, с 2012 года оно активно развивается. На наших просторах онбординг только зарождается и встречается в единичных экземплярах у некоторых компаний.</p>
+              <p>Нет, данные сервисы — не панацея. Все еще очень много будет зависеть от грамотно проработанного сайта, правильного контента и заботливых менеджеров. Однако это очень хороший инструмент, который даст вам хороший толчок за короткое время.</p>
+            </div>
+          </div>
+          <div class="wp-block-quote">
+            <p>Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+          </div>
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
+              <p>Успешность интернет-маркетинга</p>
+            </div>
+            <div class="wp-block-column">
+              <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+              <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <section class="comments">
+        <div class="comments__disclaimer">
+          <div class="container comments__container">
+            <div class="comments__left">
+              <p class="disclaimer">Дисклеймер</p>
+            </div>
+            <div class="comments__right">
+              <p class="copyright">© MAD Magazine. При полном или частичном копировании материала ссылка на первоисточник обязательна.</p>
+              <div class="comments__info">
+                <p>Нашли ошибку? Выделите фрагмент и нажмите CTRL+Enter</p>
+                <div class="comments__info__subscribe">
+                  <p>Мнение автора и редакции может не совпадать.</p>
+                  <p>Хотите написать колодку для MAD? Читайте наши&nbsp;<a href="">условия публикации.</a></p>
+                  <p>Чтобы быть в курсе всех новостей и читать новые статьи, присоединяйтесь к&nbsp;<a href="" target="_blank">Телеграм—каналу</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comments__filter">
+          <div class="container comments__container">
+            <div class="comments__left">
+              <h3 class="comments__heading">09</h3>
+              <p class="comments__text display--desktop">Комментариев</p>
+            </div>
+            <div class="comments__right">
+              <p class="comments__text display--mobile">Комментариев</p>
+              <div class="comments__filter"><a class="comments__filter__link comments__filter__link--active" href="" id="commentsFilterDate">По дате</a><a class="comments__filter__link" href="" id="commentsFilterRating">По рейтингу</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="comments__block comments__block--desktop">
+          <div class="comments__item">
+            <div class="container comments__container">
+              <div class="comments__left">
+                <p class="comments__views">+67</p>
+                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+                <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
+                  <p class="comments__author__name">Андрей Петров</p>
+                </div>
+              </div>
+              <div class="comments__right">
+                <div class="comment">
+                  <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.</p>
+                </div>
+                <div class="comment__date">
+                  <p>24 сентября 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="comments__item">
+            <div class="container comments__container">
+              <div class="comments__left">
+                <p class="comments__views">+67</p>
+                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+                <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
+                  <p class="comments__author__name">Андрей Петров</p>
+                </div>
+              </div>
+              <div class="comments__right">
+                <div class="comment">
+                  <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.</p>
+                </div>
+                <div class="comment__date">
+                  <p>24 сентября 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comments__block comments__block--mobile">
+          <div class="comments__item">
+            <div class="container comments__container">
+              <div class="comments__top">
+                <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
+                  <p class="comments__author__name">Андрей Петров</p>
+                </div>
+                <p class="comments__views">+67</p>
+              </div>
+              <div class="comments__middle">
+                <div class="comment">
+                  <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.</p>
+                </div>
+              </div>
+              <div class="comments__bottom">
+                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+                <div class="comment__date">
+                  <p>24 сентября 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comments__block comments__block__form">
+          <div class="container comments__container">
+            <div class="comments__left">
+              <p>Ваш комментарий</p>
+            </div>
+            <div class="comments__right">
+              <form class="comments__form" method="POST" action="" id="commentsForm">
+                <label for="comment"></label>
+                <textarea name="comment" id="comment"></textarea>
+                <button class="btn comments__submit" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="short-section short-section--dark">
+        <div class="container short-section__container">
+          <div class="short-section__top">
+            <div class="short-section__left">
+              <h2 class="heading">02</h2>
+            </div>
+            <div class="short-section__whom">
+              <p>Предпринимателям</p>
+            </div>
+            <div class="short-section__description">
+              <p class="subheading">совсем коротко</p>
+              <p class="subheading">о разделе.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-list section-list--dark">
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left"><a href="">Полезные материалы</a><a class="tag-big tag-big--empty"></a></div>
+            <div class="section-list__right"><a href="">Интернет—маркетинг для B2B, программа 3.0</a>
+              <p class="section-list__author">Андрей Иванов</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left section-list__left--onlytag"><a class="tag-big">Хит 2020</a></div>
+            <div class="section-list__right"><a href="">Директор по Digital Маркетингу</a>
+              <p class="section-list__author">MAD</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left section-list__left--onlytag"><a class="tag-big">Выбор редакции</a></div>
+            <div class="section-list__right"><a href="">Контен—маркетинг для компаний и руководителей</a>
+              <p class="section-list__author">Ксения Вавилова</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left"><a href="">Новое</a><a class="tag-big">Хит 2020</a></div>
+            <div class="section-list__right"><a href="">Профессия Интернет—маркетолог</a>
+              <p class="section-list__author">Completo</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left section-list__left--empty"></div>
+            <div class="section-list__right"><a href="">Маркетолог-практик</a>
+              <p class="section-list__author">MAD</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left section-list__left--empty"></div>
+            <div class="section-list__right"><a href="">10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет</a>
+              <p class="section-list__author">Виктор Марков</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-list__item">
+          <div class="container">
+            <div class="section-list__left section-list__left--empty"></div>
+            <div class="section-list__right"><a href="">SMM по полочкам</a>
+              <p class="section-list__author">Александр Македонский</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="short-section short-section--dark">
+        <div class="container short-section__container">
+          <div class="short-section__bottom">
+            <div class="short-section__left">
+              <div class="short-section__social">
+                <p class="smalltext">Читайте где удобно</p>
+                <ul>
+                  <li><a href="">VK</a></li>
+                  <li><a href="">Facebook</a></li>
+                  <li><a href="">Twitter</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="short-section__cta"><a class="btn short-section__authorBtn" href="">Как стать автором</a><a class="btn short-section__madBtn" href="">Курсы MAD</a></div>
+        </div>
+      </div>
+      <div class="article-promo">
+        <div class="article-promo__special display--desktop">
+          <div class="article-promo__special__carousel" id="desktopPromoSlider">
+            <div class="article-promo__special__item"><img src="/img/article-promo-special-1x.png" loading="lazy" srcset="/img/article-promo-special-2x.png 2x, /img/article-promo-special-4x.png 4x"/>
+              <div class="article-promo__container">
+                <div class="article-promo__top">
+                  <div class="article-promo__left">
+                    <h3 class="subheading article-promo__subheading">20.09</h3><a class="tag article-promo__tag" href="">день открытых дверей</a>
+                  </div>
+                  <div class="article-promo__right justify-content-end">
+                    <p class="smalltext article-promo__timing">4:12:45</p>
+                  </div>
+                </div>
+                <div class="article-promo__bottom"><a class="article-promo__cta" href="">Специальный гость: Баранов Артём</a></div>
+              </div>
+            </div>
+            <div class="article-promo__special__item"><img src="/img/article-promo-special-1x.png" loading="lazy" srcset="/img/article-promo-special-2x.png 2x, /img/article-promo-special-4x.png 4x"/>
+              <div class="article-promo__container">
+                <div class="article-promo__top">
+                  <div class="article-promo__left">
+                    <h3 class="subheading article-promo__subheading">20.09</h3><a class="tag article-promo__tag" href="">день открытых дверей</a>
+                  </div>
+                  <div class="article-promo__right justify-content-end">
+                    <p class="smalltext article-promo__timing">4:12:45</p>
+                  </div>
+                </div>
+                <div class="article-promo__bottom"><a class="article-promo__cta" href="">Специальный гость: Баранов Артём</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-promo__special display--mob">
+          <div class="article-promo__special__carousel" id="mobilePromoSlider">
+            <div class="article-promo__special__item"><img src="/img/article-promo-special-1x.png" loading="lazy" srcset="/img/article-promo-special-2x.png 2x, /img/article-promo-special-4x.png 4x"/>
+              <div class="article-promo__container">
+                <div class="article-promo__top">
+                  <div class="article-promo__left">
+                    <h3 class="subheading article-promo__subheading">20.09</h3><a class="tag article-promo__tag" href="">день открытых дверей</a>
+                  </div>
+                </div>
+                <div class="article-promo__bottom">
+                  <p class="smalltext article-promo__timing">4:12:45</p><a class="article-promo__cta" href="">Специальный гость: Баранов Артём</a>
+                </div>
+              </div>
+            </div>
+            <div class="article-promo__special__item"><img src="/img/article-promo-special-1x.png" loading="lazy" srcset="/img/article-promo-special-2x.png 2x, /img/article-promo-special-4x.png 4x"/>
+              <div class="article-promo__container">
+                <div class="article-promo__top">
+                  <div class="article-promo__left">
+                    <h3 class="subheading article-promo__subheading">20.09</h3><a class="tag article-promo__tag" href="">день открытых дверей</a>
+                  </div>
+                </div>
+                <div class="article-promo__bottom">
+                  <p class="smalltext article-promo__timing">4:12:45</p><a class="article-promo__cta" href="">Специальный гость: Баранов Артём</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-promo__masterclass"><img src="/img/article-promo-master-1x.png" loading="lazy" srcset="/img/article-promo-master-2x.png 2x, /img/article-promo-master-4x.png 4x"/>
+          <div class="article-promo__container">
+            <div class="article-promo__top">
+              <h3 class="subheading article-promo__subheading">06.10</h3>
+            </div>
+            <div class="article-promo__bottom"><a class="article-promo__cta" href="">Мастер-класс</a></div>
+          </div>
+        </div>
+        <div class="article-promo__webinar"><img src="/img/article-promo-webinar-1x.png" loading="lazy" srcset="/img/article-promo-webinar-2x.png 2x, /img/article-promo-webinar-4x.png 4x"/>
+          <div class="article-promo__container">
+            <div class="article-promo__top">
+              <h3 class="subheading article-promo__subheading">24.10</h3>
+            </div>
+            <div class="article-promo__bottom"><a class="article-promo__cta" href="">Вебинар</a></div>
+          </div>
+        </div>
+      </div>
+    </article>
     <footer>
       <div class="container">
         <div class="footer_top_nav footer_desktop">
@@ -283,6 +711,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="js/bundle.js"></script>
   </body>
 </html>

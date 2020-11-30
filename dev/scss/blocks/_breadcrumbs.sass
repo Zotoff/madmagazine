@@ -1,20 +1,33 @@
 .breadcrumbs
   width: 100%
   height: auto
-  margin-top: 30px
   @include flex(flex-start, flex-start)
-  & ul
-    @include flex(flex-start, center)
-    padding-left: 0
-    li
-      margin-right: 20px
-      a
-        font-size: 20px
-        line-height: 22px
-        color: $bg-black
-        @include base-transition
-        text-decoration: underline
-        text-decoration-skip-ink: none
-        &:hover
-          text-decoration: none
-          color: $bg-rose
+  & .container
+    margin-top: 0
+    margin-bottom: 0
+    padding-top: 0
+    padding-bottom: 0
+    ul
+      @include flex(flex-start, center)
+      padding-left: 0
+      margin-bottom: 0
+      li
+        margin-right: 20px
+        a
+          font-size: 20px
+          line-height: 22px
+          color: $bg-black
+          @include base-transition
+          text-decoration: underline
+          text-decoration-skip-ink: none
+          &:hover
+            text-decoration: none
+            color: $bg-rose
+  @include mad-mobile()
+    margin-top: 64px
+    & .container
+      ul
+        li
+          a
+            font-size: 12px
+            line-height: 20px

@@ -1,7 +1,7 @@
 include ../../mixins.pug
-header.header.article-header
-  .container
-    nav.header_nav
+header.header.article__header#mainHeader
+  nav.header_nav
+    .container
       .header_nav_brand
         a(href="")
           img(src="img/mad-logo.svg", alt="")
@@ -14,7 +14,8 @@ header.header.article-header
         a(href="#").nav_search
           img(src="img/icons/mad-search.svg", alt="")
         a(href="#").nav_btn Кабинет
-    nav.header_nav_mob
+  nav.header_nav_mob
+    .container
       .header_nav_brand
         a(href="#")
           img(src="img/mad-logo.svg", alt="")
@@ -102,7 +103,8 @@ header.header.article-header
             a(href="") Instagram
           li
             a(href="") Youtube
-    .breadcrumbs
+  .breadcrumbs
+    .container
       ul
         li
           a(href="") Главная
@@ -110,10 +112,12 @@ header.header.article-header
           a(href="") Предпринимателям
         li
           a(href="") Facebook
-    .header_slogan
-      h2.article__header 10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет
-    .article-tags
-      ul
+  .entry-header
+    .container
+      h2.entry-title 10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет
+  .entry-categories
+    .container
+      ul.entry-categories-inner
         li
           a(href="") Маркетинг
         li

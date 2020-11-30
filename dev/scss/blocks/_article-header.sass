@@ -1,6 +1,35 @@
-h2.article__header
+.entry-header
+  margin-top: 36px
+  width: 100%
+  height: auto
+  @include flex(space-between, center)
+  @include mad-mobile
+    .container
+      padding-top: 0
+      padding-bottom: 0
+h2.entry-title
   font-size: 120px
   line-height: 110px
   letter-spacing: -0.04em
   font-weight: normal
   color: $bg-black
+  margin-top: 10px
+  @include mad-tablet()
+    font-size: 12vw
+    line-height: .8em
+  @include mad-mobile()
+    font-size: 24px
+    line-height: 30px
+    margin-top: 0
+    margin-bottom: 20px
+.entry-categories
+  @include mad-mobile()
+  margin-bottom: 30px
+  .container
+    padding-top: 0
+    padding-bottom: 0
+    ul
+      li
+        a
+          font-size: 16px
+          line-height: 22px

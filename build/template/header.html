@@ -1,21 +1,23 @@
 
-<header class="header">
-  <div class="container">
-    <nav class="header_nav">
+<header class="header" id="mainHeader">
+  <nav class="header_nav">
+    <div class="container">
       <div class="header_nav_brand"><a href=""><img src="img/mad-logo.svg" alt=""/></a>
         <p>MAD® Magazine. Умные в тренде</p>
       </div>
       <div class="header_nav_middle"><a class="nav_item" href="#">Курсы</a><a class="nav_item nav_item--active" href="#">Журнал</a></div>
-      <div class="header_nav_right"><a class="nav_item" href="" id="headerSubscribeButton">Подписка</a><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
-    </nav>
-    <nav class="header_nav_mob">
+      <div class="header_nav_right"><a class="nav_item" href="#subscribe">Подписка</a><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
+    </div>
+  </nav>
+  <nav class="header_nav_mob">
+    <div class="container">
       <div class="header_nav_brand"><a href="#"><img src="img/mad-logo.svg" alt=""/></a></div>
       <div class="header_nav_middle"><a class="nav_search" href="#"><img src="img/icons/mad-search.svg" alt=""/></a><a class="nav_btn" href="#">Кабинет</a></div>
       <div class="header_nav_right"><a class="header_nav_hamburger" href="#" id="headerMobileNav"><span></span><span></span><span></span></a></div>
-    </nav>
+    </div>
     <div class="header_menu_mob" id="headerMobileMenu">
       <div class="header_menu_close"><a href="#" id="headerMobileClose"><span></span><span></span><span></span></a></div>
-      <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
+      <div class="mobile_menu_buttons"><a class="btn mobile_subscribe_btn" href="#subscribe" id="headerMobileSubscribe">Подписка</a><a class="btn mobile_cabinet_btn" href="" id="headerMobileCabinet">Кабинет</a></div>
       <div class="mobile_menu_nav">
         <div class="mobile_menu_nav_block"><a class="footer_top_nav_heading">MAD</a>
           <ul>
@@ -70,11 +72,15 @@
         </ul>
       </div>
     </div>
-    <div class="header_slogan">
+  </nav>
+  <div class="header_slogan">
+    <div class="container">
       <h1 class="header_slogan_heading text--uppercase">Mad Magazine</h1>
       <h2 class="header_slogan_subheading">Журнал<br />Masters Academy in Digital<br />о&nbsp;digital, маркетинге, бизнесе<br />и&nbsp;менеджменте.</h2>
     </div>
-    <div class="header_bottom"><a class="header_bottom_tag" href="">Материалы и руководства</a>
+  </div>
+  <div class="header_bottom">
+    <div class="container"><a class="header_bottom_tag" href="">Материалы и руководства</a>
       <div class="header_bottom_category">
         <ul>
           <li><a href="">Новичкам</a></li>

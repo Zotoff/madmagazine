@@ -1,20 +1,27 @@
 .article
-  &__left
-      width: 49%
-      height: auto
-      @include flex(flex-start, flex-start)
-  &__right
-    width: 49%
-    height: auto
-    @include flex(flex-start, flex-start)
   &__contain
     margin-bottom: 80px
-    & .article__container
-      height: auto
-      @include flex(space-between, flex-start)
-      padding-top: 40px
-      padding-bottom: 40px
-  &__subheading
+  .article__contain
+    .wp-block-column
+      @include mad-mobile()
+        ul
+          width: 100%
+          padding-left: 0
+          li
+            width: 100%
+            height: auto
+            min-height: 70px
+            border-bottom: 1px solid #F0F0F0
+            &:first-child
+              border-top: 1px solid #F0F0F0
+            @include flex(flex-end, center)
+            a
+              width: 70%
+              height: auto
+              font-size: 16px
+              line-height: 22px
+              text-align: right
+  & h3
     font-size: 60px
     line-height: 60px
     letter-spacing: -0.04em
@@ -23,6 +30,9 @@
     font-weight: normal
     margin-top: 0
     margin-bottom: 40px
+    @include mad-mobile()
+      font-size: 24px
+      line-height: 30px
   &__subheading--alignleft
       width: 70%
   & p
@@ -31,9 +41,12 @@
     color: #000000
     margin-top: 0
     margin-bottom: 45px
-  & h3
-    margin-top: 0
-    margin-bottom: 0
+    @include mad-mobile()
+      font-size: 16px !important
+      line-height: 22px !important
+      margin-bottom: 1.875em !important
+      &:last-child
+        margin-bottom: 0 !important
   & ul
     font-size: 20px
     line-height: 30px
@@ -52,3 +65,256 @@
   &__intro
     & .article__container
       @include flex(space-between, flex-start)
+    @include mad-mobile()
+      .article__left
+        display: none
+      .article__right
+        width: 100%
+  &__banner
+    width: 100%
+    height: auto
+    position: relative
+    min-height: 400px
+    margin-bottom: 40px
+    & img
+      position: absolute
+      top: 0px
+      left: 0px
+      max-width: 100%
+      width: 100%
+      height: 100%
+      min-height: 400px
+      object-fit: cover
+      z-index: 1000
+    .container
+      @include flex(space-between, flex-start)
+      flex-direction: column
+      position: relative
+      z-index: 2000
+      min-height: 400px
+      height: 100%
+      .article__top
+        width: 100%
+        height: auto
+        @include flex(flex-start, flex-start)
+        p.smalltext
+          font-size: 12px
+          line-height: 20px
+          color: #ffffff
+      .article__bottom
+        width: 100%
+        height: auto
+        @include flex(flex-end, flex-end)
+        .article__cta__btn
+          background-color: $bg-rose
+          color: #ffffff
+          @include base-transition
+          text-transform: uppercase
+          text-decoration: underline
+          &:hover
+            background-color: #ffffff
+            color: #000000
+            text-decoration: none
+          @include mad-mobile()
+            width: 100%
+  &__list
+    width: 100%
+    height: auto
+    margin-bottom: 80px
+    @include mad-mobile()
+      margin-bottom: 40px
+    &__item
+      border-bottom: 1px solid #000000
+      &:last-child
+        border-bottom: none
+      .container
+        padding-top: 15px
+        padding-bottom: 20px
+        @include flex(space-between, center)
+    &__left
+      width: 360px
+      max-width: 360px
+      @include flex(flex-start, center)
+      @include mad-tablet()
+        width: 49%
+      @include mad-mobile()
+        width: 49%
+      p
+        margin-bottom: 0
+    &__right
+      width: 76%
+      @include mad-tablet()
+        width: 49%
+      @include mad-mobile()
+        width: 49%
+      @include flex(flex-start, center)
+      p
+        margin-bottom: 0
+
+.article__meta--mobile
+  display: none
+  @include mad-mobile()
+    width: 100%
+    height: auto
+    min-height: 70px
+    border-top: 1px solid $bg-black
+    @include flex(space-between, center)
+    .container
+      @include flex(space-between, center)
+      padding: 15px
+      .article__meta__left
+        width: 40%
+        height: auto
+        @include flex(flex-start, center)
+        .post-date
+          font-size: 24px
+          line-height: 30px
+          color: $bg-black
+          p
+            margin-bottom: 0
+      .article__meta__right
+        width: 60%
+        height: auto
+        @include flex(space-between, center)
+        .post-length
+          font-size: 12px
+          line-height: 1em
+          color: #000000
+          p
+            margin-bottom: 0
+        .post-views
+          font-size: 12px
+          line-height: 1em
+          color: #000000
+          p
+            margin-bottom: 0
+.article__content
+  .container
+    padding-bottom: 0
+    padding-top: 0
+
+.article__slider
+  width: 100%
+  height: auto
+  max-height: 680px
+  position: relative
+  margin-top: 60px
+  margin-bottom: 80px
+  @include flex(center, center)
+  @include mad-mobile()
+    margin-top: 40px
+    margin-bottom: 0px
+  button[data-action="stop"]
+    display: none
+  .container
+    position: relative
+    overflow: hidden
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+  &__nav
+    width: 40px
+    height: 10px
+    margin: 40px auto
+    @include flex(space-between, center)
+    @include mad-mobile()
+      margin-top: 0px
+    .slider__nav__item
+      width: 10px
+      height: 10px
+      background-color: $bg-basicgrey
+      border-radius: 50%
+      @include base-transition
+      .tns-nav-active
+        background-color: $bg-rose
+      &:hover
+        cursor: pointer
+        background-color: $bg-rose
+  &__controls
+    position: absolute
+    top: 35%
+    left: 0
+    width: 100%
+    height: 140px
+    z-index: 1500
+    @include flex(space-between, center)
+    @include mad-tablet()
+      display: none
+    @include mad-mobile()
+      display: none
+  .article__carousel
+    @include flex(center, center)
+    width: 560px
+    height: 640px
+    overflow: hidden
+    position: relative
+    z-index: 1200
+    @include mad-mobile()
+      height: auto
+      margin-bottom: 20px
+  .article__carousel__item
+    @include flex(center, center)
+    height: 100%
+    img
+      height: 640px
+      @include mad-mobile()
+        height: auto
+        min-height: 450px
+  &__prev,
+  &__next
+    width: 205px
+    height: 142px
+    & img
+      width: 100%
+      height: 100%
+  &__prev
+    img
+      transform: rotate(180deg)
+    @include base-transition
+    &:hover
+      cursor: pointer
+.tns-visually-hidden
+  display: none
+
+.wp-block-columns
+    max-width: 1600px
+    width: 100%
+    height: auto
+    @include flex(space-between, flex-start)
+    padding: 26px 40px
+    margin: 0 auto
+    .wp-block-column
+      width: 49%
+      height: auto
+      @include flex(flex-start, flex-start)
+      p
+        &:last-child
+          margin-bottom: 0
+      @include mad-mobile()
+        &:first-child
+          display: none
+    @include mad-mobile()
+      .wp-block-column
+        width: 100%
+        height: auto
+        .article__subheading
+          width: 50%
+      .wp-block-column
+        width: 100%
+        height: auto
+.wp-block-quote
+  margin: 60px auto
+  width: 500px
+  height: auto
+  max-width: 500px
+  @include mad-mobile()
+    width: 80%
+    max-width: 80%
+    margin: 40px auto
+  p
+    font-size: 20px
+    line-height: 30px
+    font-style: italic
+    @include mad-mobile()
+      font-size: 16px
+      line-height: 22px

@@ -32,7 +32,11 @@ html(lang="ru")
         meta(name="msapplication-TileImage" content="img/icons/favicons/ms-icon-144x144.png")
         meta(name="theme-color" content="#ffffff")
     body
-        include template/articles/header.pug
-        include template/articles/main.pug
+        article.post.type-post.status-publish.format-standard.hentry.article
+          include template/articles/header.pug
+          include template/articles/main.pug
+          include blocks/comments/index.pug
+          include blocks/short-section-dark/index.pug
+          include blocks/article-promo/index.pug
         include template/footer.pug
         include template/scripts.pug

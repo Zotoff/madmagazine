@@ -445,3 +445,22 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.display--desktop {
+  display: flex;
+  @include mad-mobile() {
+    display: none;
+  }
+}
+
+.display--mob {
+  display: none;
+  @include mad-mobile() {
+    display: flex;
+  }
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+  flex-wrap: wrap;
+}

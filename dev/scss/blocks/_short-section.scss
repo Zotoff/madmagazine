@@ -17,8 +17,13 @@
       }
     }
     & .short-section__description {
-      & p {
+      & p.subheading {
         color: #ffffff;
+        font-size: 60px;
+        line-height: 60px;
+        @include mad-tablet() {
+          font-size: 4vw;
+        }
       }
     }
     & .short-section__social {

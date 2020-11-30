@@ -1,7 +1,7 @@
 include ../mixins.pug
-header.header
-  .container
-    nav.header_nav
+header.header#mainHeader
+  nav.header_nav
+    .container
       .header_nav_brand
         a(href="")
           img(src="img/mad-logo.svg", alt="")
@@ -10,11 +10,12 @@ header.header
         a(href="#").nav_item Курсы
         a(href="#").nav_item.nav_item--active Журнал
       .header_nav_right
-        a(href="").nav_item#headerSubscribeButton Подписка
+        a(href="#subscribe").nav_item Подписка
         a(href="#").nav_search
           img(src="img/icons/mad-search.svg", alt="")
         a(href="#").nav_btn Кабинет
-    nav.header_nav_mob
+  nav.header_nav_mob
+    .container
       .header_nav_brand
         a(href="#")
           img(src="img/mad-logo.svg", alt="")
@@ -34,7 +35,7 @@ header.header
           span
           span
       .mobile_menu_buttons
-        a.btn.mobile_subscribe_btn(href="")#headerMobileSubscribe Подписка
+        a.btn.mobile_subscribe_btn(href="#subscribe")#headerMobileSubscribe Подписка
         a.btn.mobile_cabinet_btn(href="")#headerMobileCabinet Кабинет
       .mobile_menu_nav
         .mobile_menu_nav_block
@@ -102,11 +103,12 @@ header.header
             a(href="") Instagram
           li
             a(href="") Youtube
-
-    .header_slogan
+  .header_slogan
+    .container
       h1.header_slogan_heading.text--uppercase Mad Magazine
       h2.header_slogan_subheading Журнал<br />Masters Academy in Digital<br />о&nbsp;digital, маркетинге, бизнесе<br />и&nbsp;менеджменте.
-    .header_bottom
+  .header_bottom
+    .container
       a(href="").header_bottom_tag Материалы и руководства
       .header_bottom_category
         ul
