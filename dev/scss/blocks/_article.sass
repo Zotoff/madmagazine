@@ -3,6 +3,10 @@
     margin-bottom: 80px
   .article__contain
     .wp-block-column
+      & h2,
+      & h3
+        padding-top: 0
+        padding-left: 0
       @include mad-mobile()
         ul
           width: 100%
@@ -25,11 +29,14 @@
     font-size: 60px
     line-height: 60px
     letter-spacing: -0.04em
-    color: #000000
+    color: $bg-black
     text-transform: uppercase
     font-weight: normal
     margin-top: 0
     margin-bottom: 40px
+    @include mad-tablet()
+      font-size: 7vw
+      line-height: 1em
     @include mad-mobile()
       font-size: 24px
       line-height: 30px
@@ -75,7 +82,11 @@
     height: auto
     position: relative
     min-height: 400px
+    margin-top: 60px
     margin-bottom: 40px
+    @include mad-mobile()
+      margin-top: 40px
+      margin-bottom: 40px
     & img
       position: absolute
       top: 0px
@@ -120,9 +131,11 @@
   &__list
     width: 100%
     height: auto
+    margin-top: 60px
     margin-bottom: 80px
     @include mad-mobile()
       margin-bottom: 40px
+      margin-top: 40px
     &__item
       border-bottom: 1px solid #000000
       &:last-child
@@ -130,7 +143,7 @@
       .container
         padding-top: 15px
         padding-bottom: 20px
-        @include flex(space-between, center)
+        @include flex(space-between, flex-start)
     &__left
       width: 360px
       max-width: 360px
@@ -225,7 +238,7 @@
       background-color: $bg-basicgrey
       border-radius: 50%
       @include base-transition
-      .tns-nav-active
+      & .tns-nav-active
         background-color: $bg-rose
       &:hover
         cursor: pointer
@@ -264,12 +277,17 @@
   &__next
     width: 205px
     height: 142px
+    &:hover,
+    &:focus
+      border: none
+      outline: none
     & img
       width: 100%
       height: 100%
-  &__prev
-    img
-      transform: rotate(180deg)
+      &:hover,
+      &:focus
+        border: none
+        outline: none
     @include base-transition
     &:hover
       cursor: pointer
@@ -283,6 +301,14 @@
     @include flex(space-between, flex-start)
     padding: 26px 40px
     margin: 0 auto
+    @include mad-tablet()
+      padding-top: 0
+      padding-bottom: 0
+    @include mad-mobile()
+      padding-top: 0
+      padding-bottom: 0
+      padding-left: 15px
+      padding-bottom: 15px
     .wp-block-column
       width: 49%
       height: auto
@@ -318,3 +344,15 @@
     @include mad-mobile()
       font-size: 16px
       line-height: 22px
+
+.slider__nav__item.tns-nav-active
+  background-color: $bg-rose
+
+.article__poster
+  .post-bookmark
+    color: #ffffff
+    text-decoration: underline
+    @include base-transition
+    &:hover
+      color: $bg-rose
+      text-decoration: none

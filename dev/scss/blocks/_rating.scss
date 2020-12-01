@@ -1,7 +1,7 @@
 .rating {
   border-top: 1px solid #000000;
   &__container.container {
-    padding-top: 67px;
+    padding-top: 60px;
     padding-bottom: 40px;
 
     @media (max-width: 767.98px) {
@@ -73,7 +73,7 @@
       & p {
         width: 70%;
       }
-      
+
       @include mad-tablet() {
         width: 25%;
       }
@@ -105,7 +105,10 @@
     height: auto;
     margin-bottom: 68px;
     margin-top: 0px;
-
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     @media (max-width: 767.98px) {
       margin-bottom: 40px;
     }

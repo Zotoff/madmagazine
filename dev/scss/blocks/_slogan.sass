@@ -1,0 +1,60 @@
+.slogan
+  .container
+    padding-top: 0
+    padding-bottom: 0
+  &__heading
+    color: $bg-black
+    margin-top: 0px
+    margin-bottom: 0px
+    line-height: .8em
+    font-weight: 400
+    position: relative
+    left: -20px
+    letter-spacing: -15px
+    z-index: 50
+    padding-top: 0
+    padding-left: 0
+    @media (min-width: 1600px)
+      font-size: 320px
+  &__subheading
+    font-size: 60px
+    font-weight: 400
+    color: $bg-black
+    letter-spacing: -2px
+    text-transform: uppercase
+    margin-top: 27px
+    margin-bottom: 40px
+    line-height: 60px
+    padding-left: 0
+    margin-top: 0
+
+@include mad-tablet()
+  .slogan__heading
+    font-size: 18vw
+    left: -10px
+  .slogan__subheading
+    font-size: 4vw
+    letter-spacing: initial
+@media (min-width: 1200px) and (max-width: 1599.98px)
+  .slogan__heading
+    font-size: 18vw
+  .slogan__subheading
+    font-size: 4vw
+    letter-spacing: initial
+@include mad-mobile()
+  .slogan
+    margin-top: 60px
+  .slogan__heading
+    letter-spacing: -4px
+    font-size: 64px
+    line-height: 1em
+    left: -5px
+    margin-bottom: 0
+    padding-bottom: 0
+  .slogan__subheading
+    font-size: 24px
+    line-height: 30px
+    letter-spacing: initial
+    margin-top: 10px
+    padding-top: 0
+    margin-bottom: 30px

@@ -1,5 +1,5 @@
 
-<section class="comments">
+<section class="comments" id="postComments">
   <div class="comments__disclaimer">
     <div class="container comments__container">
       <div class="comments__left">
@@ -23,10 +23,10 @@
       <div class="comments__left">
         <h3 class="comments__heading">09</h3>
         <p class="comments__text display--desktop">Комментариев</p>
+        <p class="comments__text display--mob">Комментариев</p>
       </div>
       <div class="comments__right">
-        <p class="comments__text display--mobile">Комментариев</p>
-        <div class="comments__filter"><a class="comments__filter__link comments__filter__link--active" href="" id="commentsFilterDate">По дате</a><a class="comments__filter__link" href="" id="commentsFilterRating">По рейтингу</a></div>
+        <div class="comments__filter__block"><a class="comments__filter__link comments__filter__link--active" href="" id="commentsFilterDate">По дате</a><a class="comments__filter__link" href="" id="commentsFilterRating">По рейтингу</a></div>
       </div>
     </div>
   </div>
@@ -34,8 +34,8 @@
     <div class="comments__item">
       <div class="container comments__container">
         <div class="comments__left">
-          <p class="comments__views">+67</p>
-          <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+          <p class="comments__views" data-count="67">+67</p>
+          <div class="comments__like"><a class="comments__like__btn comments__like__btn--like" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
           <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
             <p class="comments__author__name">Андрей Петров</p>
           </div>
@@ -53,8 +53,8 @@
     <div class="comments__item">
       <div class="container comments__container">
         <div class="comments__left">
-          <p class="comments__views">+67</p>
-          <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+          <p class="comments__views" data-count="67">+67</p>
+          <div class="comments__like"><a class="comments__like__btn comments__like__btn--like" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
           <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
             <p class="comments__author__name">Андрей Петров</p>
           </div>
@@ -77,7 +77,7 @@
           <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
             <p class="comments__author__name">Андрей Петров</p>
           </div>
-          <p class="comments__views">+67</p>
+          <p class="comments__views" data-count="67">+67</p>
         </div>
         <div class="comments__middle">
           <div class="comment">
@@ -99,10 +99,10 @@
         <p>Ваш комментарий</p>
       </div>
       <div class="comments__right">
-        <form class="comments__form" method="POST" action="" id="commentsForm">
+        <form class="comments__form" method="GET" action="ajax/response.json" id="commentsForm">
           <label for="comment"></label>
           <textarea name="comment" id="comment"></textarea>
-          <button class="btn comments__submit" type="submit">Отправить</button>
+          <button class="btn comments__submit" type="submit" id="commentsSubmit">Отправить</button>
         </form>
       </div>
     </div>

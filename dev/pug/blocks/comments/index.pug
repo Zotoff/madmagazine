@@ -1,4 +1,4 @@
-section.comments
+section.comments#postComments
   .comments__disclaimer
     .container.comments__container
       .comments__left
@@ -18,18 +18,18 @@ section.comments
       .comments__left
         h3.comments__heading 09
         p.comments__text.display--desktop Комментариев
+        p.comments__text.display--mob Комментариев
       .comments__right
-        p.comments__text.display--mobile Комментариев
-        .comments__filter
+        .comments__filter__block
           a(href="").comments__filter__link.comments__filter__link--active#commentsFilterDate По дате
           a(href="").comments__filter__link#commentsFilterRating По рейтингу
   .comments__block.comments__block--desktop
     .comments__item
       .container.comments__container
         .comments__left
-          p.comments__views +67
+          p.comments__views(data-count=`67`) +67
           .comments__like
-            a(href="").comments__like__btn.comments__like__btn--like.comments__like__btn--active Нравится
+            a(href="").comments__like__btn.comments__like__btn--like Нравится
             a(href="").comments__like__btn.comments__like__btn--dislike Не нравится
           .comments__author
             a(href="").comments__author__img
@@ -43,9 +43,9 @@ section.comments
     .comments__item
       .container.comments__container
         .comments__left
-          p.comments__views +67
+          p.comments__views(data-count=`67`) +67
           .comments__like
-            a(href="").comments__like__btn.comments__like__btn--like.comments__like__btn--active Нравится
+            a(href="").comments__like__btn.comments__like__btn--like Нравится
             a(href="").comments__like__btn.comments__like__btn--dislike Не нравится
           .comments__author
             a(href="").comments__author__img
@@ -64,7 +64,7 @@ section.comments
             a(href="").comments__author__img
               img(src="img/comment-author-img.png")
             p.comments__author__name Андрей Петров
-          p.comments__views +67
+          p.comments__views(data-count=`67`) +67
         .comments__middle
           .comment
             p Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж.
@@ -79,7 +79,7 @@ section.comments
         .comments__left
           p Ваш комментарий
         .comments__right
-          form(method="POST", action="").comments__form#commentsForm
+          form(method="GET", action="ajax/response.json").comments__form#commentsForm
             label(for="comment")
             textarea(name="comment", id="comment")
-            button(type="submit").btn.comments__submit Отправить
+            button(type="submit").btn.comments__submit#commentsSubmit Отправить

@@ -7,7 +7,7 @@ module.exports = [
     './gulp/tasks/js.js',
     './gulp/tasks/imagescopy.js',
     './gulp/tasks/fontscopy.js',
-    './gulp/tasks/videocopy.js',
+    './gulp/tasks/jscopy.js',
     './gulp/tasks/iconscopy.js',
     './gulp/tasks/phpcopy.js',
     './gulp/tasks/images.js',

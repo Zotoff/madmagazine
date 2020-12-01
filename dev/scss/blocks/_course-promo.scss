@@ -36,6 +36,8 @@
   &__subheading {
     color: #ffffff;
     margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
     @include mad-mobile() {
       font-size: 40px;
       line-height: 40px;
@@ -48,11 +50,6 @@
     width: 696px;
     height: 30px;
     margin: 0px auto;
-
-
-    @include mad-tablet() {
-      width: 100%;
-    }
 
     @include mad-mobile() {
       width: 100%;

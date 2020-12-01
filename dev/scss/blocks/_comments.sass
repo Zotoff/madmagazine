@@ -101,6 +101,11 @@
     top: -30px
     color: $bg-black
     margin-bottom: 0
+    margin-top: 0
+    margin-left: 0
+    width: 49%
+    padding-left: 0
+    padding-top: 0
     @include mad-tablet()
       font-size: 18vw
     @include mad-mobile()
@@ -163,6 +168,8 @@
   &__like
     @include flex(space-between, flex-start)
     margin-right: 140px
+    @include mad-tablet()
+      margin-bottom: 15px
     &__btn
       @include flex(center, center)
       width: 100px
@@ -222,6 +229,12 @@
     @include flex(flex-end, flex-start)
     width: 100%
     height: auto
+    position: relative
+    label.error
+      margin-bottom: 20px
+      text-align: left
+      width: 100%
+      color: $bg-rose
     textarea
       width: 100%
       height: auto

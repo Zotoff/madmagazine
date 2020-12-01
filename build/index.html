@@ -108,25 +108,27 @@
           </div>
         </div>
       </nav>
-      <div class="header_slogan">
-        <div class="container">
-          <h1 class="header_slogan_heading text--uppercase">Mad Magazine</h1>
-          <h2 class="header_slogan_subheading">Журнал<br />Masters Academy in Digital<br />о&nbsp;digital, маркетинге, бизнесе<br />и&nbsp;менеджменте.</h2>
-        </div>
+    </header>
+    <section class="slogan">
+      <div class="container">
+        <h1 class="slogan__heading text--uppercase">Mad Magazine</h1>
+        <h2 class="slogan__subheading">Журнал<br />Masters Academy in Digital<br />о&nbsp;digital, маркетинге, бизнесе<br />и&nbsp;менеджменте.</h2>
       </div>
-      <div class="header_bottom">
-        <div class="container"><a class="header_bottom_tag" href="">Материалы и руководства</a>
-          <div class="header_bottom_category">
-            <ul>
-              <li><a href="">Новичкам</a></li>
-              <li><a href="">Предпринимателям</a></li>
-              <li><a href="">Маркетологам</a></li>
-              <li><a href="">Руководителям</a></li>
+    </section>
+    <section class="category-nav">
+      <div class="container">
+        <div class="category-nav__bottom"><a class="category-nav__tag" href="">Материалы и руководства</a>
+          <div class="category-nav__category">
+            <ul id="categoryNavList">
+              <li><a href="" data-link="novice">Новичкам</a></li>
+              <li><a href="" data-link="entrepreneur">Предпринимателям</a></li>
+              <li><a href="" data-link="marketolog">Маркетологам</a></li>
+              <li><a href="" data-link="manager">Руководителям</a></li>
             </ul>
           </div>
         </div>
       </div>
-    </header>
+    </section>
     <main>
       <section class="rating">
         <div class="container rating__container">
@@ -295,7 +297,7 @@
           </div>
         </div>
       </div>
-      <section class="short-section short-section--light">
+      <section class="short-section short-section--light" data-id="novice">
         <div class="container short-section__container">
           <div class="short-section__top">
             <div class="short-section__left">
@@ -434,7 +436,7 @@
           <div class="main-promo__webinar__specialguest"><a href="">Специальный гость: Баранов Артем</a></div>
         </div>
       </div>
-      <section class="short-section short-section--dark">
+      <section class="short-section short-section--dark" data-id="entrepreneur">
         <div class="container short-section__container">
           <div class="short-section__top">
             <div class="short-section__left">
@@ -635,6 +637,8 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
     <script src="js/bundle.js"></script>
   </body>
 </html>

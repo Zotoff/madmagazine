@@ -7,13 +7,29 @@
   &--dark {
     background-color: #000;
     & .short-section__left {
+      @include mad-tablet() {
+        width: 49%;
+        min-width: 49%;
+        max-width: 49%;
+        margin-right: 30px;
+        @include flex(flex-start, flex-start)
+      }
       & h2 {
         color: #ffffff;
+        @include mad-tablet() {
+          font-size: 18vw;
+          width: 49%;
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
     }
     & .short-section__whom {
       & p {
         color: #ffffff;
+      }
+      @include mad-mobile() {
+        display: none;
       }
     }
     & .short-section__description {
@@ -23,6 +39,12 @@
         line-height: 60px;
         @include mad-tablet() {
           font-size: 4vw;
+          margin-bottom: 0;
+        }
+        @include mad-mobile() {
+          font-size: 24px !important;
+          line-height: 30px !important;
+          margin-bottom: 0 !important;
         }
       }
     }
@@ -60,6 +82,12 @@
     height: auto;
     @include flex(flex-start, flex-start);
   }
+  &__top {
+    @include mad-tablet() {
+      @include flex(space-between, flex-start)
+    }
+  }
+
   &__bottom {
     margin-bottom: 80px;
   }
@@ -67,10 +95,11 @@
     min-width: 360px;
     max-width: 360px;
     @include mad-tablet() {
-      width: 40%;
-      min-width: 40%;
-      max-width: 40%;
+      width: 49%;
+      min-width: 49%;
+      max-width: 49%;
       margin-right: 30px;
+      @include flex(flex-start, flex-start)
     }
     @include mad-mobile() {
       width: 100%;
@@ -80,10 +109,15 @@
     & h2 {
       margin-top: 0;
       margin-bottom: 0;
+      padding-left: 0;
       position: relative;
       top: -35px;
 
       @include mad-tablet() {
+        font-size: 18vw;
+        width: 49%;
+        margin-left: 0;
+        margin-right: 0;
       }
       @include mad-mobile() {
         font-size: 64px;
@@ -100,7 +134,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-
     & p {
       font-size: 20px;
       line-height: 22px;
@@ -108,10 +141,10 @@
       margin-bottom: 0;
     }
     @include mad-tablet() {
-      width: 10%;
-      min-width: 10%;
+      display: none;
     }
     @include mad-mobile() {
+      display: none;
       width: 100%;
       min-width: 100%;
       margin-bottom: 20px;
@@ -134,7 +167,7 @@
     }
 
     @include mad-tablet() {
-      width: 60%;
+      width: 40%;
     }
     @include mad-mobile() {
       width: 100%;

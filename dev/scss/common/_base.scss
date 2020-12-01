@@ -442,6 +442,28 @@ body {
   }
 }
 
+h1,
+h2,
+h3,
+h4 {
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+  max-width: 1600px;
+
+  padding-top: 26px;
+  padding-bottom: 26px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @media (max-width: 768px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

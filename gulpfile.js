@@ -29,7 +29,7 @@ $.gulp.task(`default`, $.gulp.series(
         `imageswebp`,
         `imagescopy`,
         `iconscopy`,
-        `videocopy`,
+        `jscopy`,
         `phpcopy`,
         `fontscopy`
     ),

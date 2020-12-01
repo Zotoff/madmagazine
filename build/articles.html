@@ -37,7 +37,7 @@
       <header class="header article__header" id="mainHeader">
         <nav class="header_nav">
           <div class="container">
-            <div class="header_nav_brand"><a href=""><img src="img/mad-logo.svg" alt=""/></a>
+            <div class="header_nav_brand"><a href="/"><img src="img/mad-logo.svg" alt=""/></a>
               <p>MAD® Magazine. Умные в тренде</p>
             </div>
             <div class="header_nav_middle"><a class="nav_item" href="#">Курсы</a><a class="nav_item nav_item--active" href="#">Журнал</a></div>
@@ -111,27 +111,25 @@
         <div class="breadcrumbs">
           <div class="container">
             <ul>
-              <li><a href="">Главная</a></li>
+              <li><a href="/">Главная</a></li>
               <li><a href="">Предпринимателям</a></li>
               <li><a href="">Facebook</a></li>
             </ul>
           </div>
         </div>
-        <div class="entry-header">
-          <div class="container">
-            <h2 class="entry-title">10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет</h2>
-          </div>
-        </div>
-        <div class="entry-categories">
-          <div class="container">
-            <ul class="entry-categories-inner">
-              <li><a href="">Маркетинг</a></li>
-              <li><a href="">SEO</a></li>
-              <li><a href="">Facebook</a></li>
-            </ul>
-          </div>
-        </div>
       </header>
+      <div class="entry-header">
+        <h2 class="entry-title">10 ошибок в рекламе Facebook, из-за которых вы сливаете бюджет</h2>
+      </div>
+      <div class="entry-categories">
+        <div class="container">
+          <ul class="entry-categories-inner">
+            <li><a href="">Маркетинг</a></li>
+            <li><a href="">SEO</a></li>
+            <li><a href="">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
       <main>
         <section class="article__meta--mobile">
           <div class="container">
@@ -165,8 +163,7 @@
                 </ul>
               </div>
               <div class="article__poster__right">
-                <p class="post-views">24560 просмотров</p><a class="post-comment-link" href="">9 комментариев</a>
-                <div class="post-bookmark"><img src="img/icons/icon-bookmark.svg"/><a href="">Прочесть позже</a></div>
+                <p class="post-views">24560 просмотров</p><a class="post-comment-link" href="" id="postCommentsLink">9 комментариев</a><a class="post-bookmark" href=""><img src="img/icons/icon-bookmark.svg"/> Прочесть позже</a>
               </div>
             </div>
             <div class="article__poster__bottom">
@@ -182,9 +179,7 @@
           <div class="container article__poster__container article__poster--mobile">
             <div class="article__poster__top">
               <div class="article__poster__left"><a class="post-author" href="">Андрей Иванов</a><a class="post-comment-link" href="">9 комментариев</a></div>
-              <div class="article__poster__right">
-                <div class="post-bookmark"><a href=""><img src="img/icons/icon-bookmark.svg"/></a></div>
-              </div>
+              <div class="article__poster__right"><a class="post-bookmark post-bookmark--mob" href=""><img src="img/icons/icon-bookmark.svg"/></a></div>
             </div>
             <div class="article__poster__bottom">
               <div class="article__poster__social">
@@ -216,20 +211,16 @@
             </div>
           </div>
         </section>
-        <section class="article__content">
-          <div class="container">
-            <h3>В первую очередь бизнесу важны посетители, доход.</h3>
+        <h3>В первую очередь бизнесу важны посетители, доход.</h3>
+        <div class="wp-block-columns">
+          <div class="wp-block-column">
+            <p>Вступление</p>
           </div>
-          <div class="wp-block-columns">
-            <div class="wp-block-column">
-              <p>Вступление</p>
-            </div>
-            <div class="wp-block-column">
-              <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
-              <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
-            </div>
+          <div class="wp-block-column">
+            <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+            <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
           </div>
-        </section>
+        </div>
         <section class="article__banner"><img src="img/article-image-1x.png" srcset="img/article-image-2x.png 2x, img/article-image-4x.png 4x"/>
           <div class="container article__container">
             <div class="article__top">
@@ -238,19 +229,15 @@
             <div class="article__bottom"><a class="btn article__cta__btn" href="">Курсы MAD</a></div>
           </div>
         </section>
-        <section class="article__content">
-          <div class="container">
-            <h3>Что должно входить в аудит интернет маркетинга?</h3>
+        <h3>Что должно входить в аудит интернет маркетинга?</h3>
+        <div class="wp-block-columns">
+          <div class="wp-block-column">
+            <p>А вы знали что?</p>
           </div>
-          <div class="wp-block-columns">
-            <div class="wp-block-column">
-              <p>А вы знали что?</p>
-            </div>
-            <div class="wp-block-column">
-              <p>В первую очередь бизнесу важны посетители, приносящие доход. Голая посещаемость без совершения покупок и заказов для компании так же бесполезна, как и ее отсутствие. Что делать, если посетителей мало или они нецелевые, подскажет анализ трафика. Системы аналитики Яндекс и Google позволяют узнать, кто приходил на сайт (демографические характеристики аудитории), откуда и по каким ключевым словам, с каких устройств, сколько времени длился визит, какие страницы заинтересовали посетителей, какие целевые действия были выполнены и т. п.</p>
-            </div>
+          <div class="wp-block-column">
+            <p>В первую очередь бизнесу важны посетители, приносящие доход. Голая посещаемость без совершения покупок и заказов для компании так же бесполезна, как и ее отсутствие. Что делать, если посетителей мало или они нецелевые, подскажет анализ трафика. Системы аналитики Яндекс и Google позволяют узнать, кто приходил на сайт (демографические характеристики аудитории), откуда и по каким ключевым словам, с каких устройств, сколько времени длился визит, какие страницы заинтересовали посетителей, какие целевые действия были выполнены и т. п.</p>
           </div>
-        </section>
+        </div>
         <section class="article__list">
           <div class="article__list__item">
             <div class="container">
@@ -295,25 +282,21 @@
             </div>
           </div>
         </section>
-        <section class="article__content">
-          <div class="container">
-            <h3>Какие проблемы есть на сайтах компаний застройщиков?</h3>
+        <h3>Какие проблемы есть на сайтах компаний застройщиков?</h3>
+        <div class="wp-block-columns">
+          <div class="wp-block-column">
+            <p>Давайте поговорим</p>
           </div>
-          <div class="wp-block-columns">
-            <div class="wp-block-column">
-              <p>Давайте поговорим</p>
-            </div>
-            <div class="wp-block-column">
-              <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
-              <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
-            </div>
+          <div class="wp-block-column">
+            <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+            <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
           </div>
-        </section>
+        </div>
         <section class="article__slider">
           <div class="container">
             <div class="article__slider__controls" id="articleSliderControls">
-              <div class="article__slider__prev"><img src="img/icons/article-slider-arrow.svg"/></div>
-              <div class="article__slider__next"><img src="img/icons/article-slider-arrow.svg"/></div>
+              <div class="article__slider__prev"><img src="img/icons/article-slider-prevarrow.svg"/></div>
+              <div class="article__slider__next"><img src="img/icons/article-slider-nextarrow.svg"/></div>
             </div>
             <div class="article__carousel" id="articleCarousel">
               <div class="article__carousel__item"><img src="img/article-promo-webinar-1x.png"/></div>
@@ -327,30 +310,28 @@
             </div>
           </div>
         </section>
-        <section class="article__content">
-          <div class="wp-block-columns">
-            <div class="wp-block-column"></div>
-            <div class="wp-block-column">
-              <p>Теперь юзабилити, плохо проработанные формы заявок и ленивые менеджеры не станут камнем преткновения вашего бизнеса. Сервис проведет клиента по основным разделам сайта, поможет разобраться в условиях. Он покажет, где найти и как заполнить формы обратной связи, а продажи станут меньше зависеть от человеческого фактора и настроения менеджеров в колл-центре.</p>
-              <p>Направление онбординг-помощников уже долгое время существует на западном рынке, с 2012 года оно активно развивается. На наших просторах онбординг только зарождается и встречается в единичных экземплярах у некоторых компаний.</p>
-              <p>Нет, данные сервисы — не панацея. Все еще очень много будет зависеть от грамотно проработанного сайта, правильного контента и заботливых менеджеров. Однако это очень хороший инструмент, который даст вам хороший толчок за короткое время.</p>
-            </div>
+        <div class="wp-block-columns">
+          <div class="wp-block-column"></div>
+          <div class="wp-block-column">
+            <p>Теперь юзабилити, плохо проработанные формы заявок и ленивые менеджеры не станут камнем преткновения вашего бизнеса. Сервис проведет клиента по основным разделам сайта, поможет разобраться в условиях. Он покажет, где найти и как заполнить формы обратной связи, а продажи станут меньше зависеть от человеческого фактора и настроения менеджеров в колл-центре.</p>
+            <p>Направление онбординг-помощников уже долгое время существует на западном рынке, с 2012 года оно активно развивается. На наших просторах онбординг только зарождается и встречается в единичных экземплярах у некоторых компаний.</p>
+            <p>Нет, данные сервисы — не панацея. Все еще очень много будет зависеть от грамотно проработанного сайта, правильного контента и заботливых менеджеров. Однако это очень хороший инструмент, который даст вам хороший толчок за короткое время.</p>
           </div>
-          <div class="wp-block-quote">
-            <p>Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+        </div>
+        <div class="wp-block-quote">
+          <p>Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+        </div>
+        <div class="wp-block-columns">
+          <div class="wp-block-column">
+            <p>Успешность интернет-маркетинга</p>
           </div>
-          <div class="wp-block-columns">
-            <div class="wp-block-column">
-              <p>Успешность интернет-маркетинга</p>
-            </div>
-            <div class="wp-block-column">
-              <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
-              <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
-            </div>
+          <div class="wp-block-column">
+            <p>Успешность интернет-маркетинга завязана на многих факторах. Чтобы провести потенциального покупателя через всю воронку продаж, придется выстроить такой механизм взаимодействия, который будет работать на каждом этапе, как швейцарские часы, — отлажено и безотказно.</p>
+            <p>Конверсия — штука капризная. Потенциальный клиент может слиться на любом этапе взаимодействия: поленится дочитывать нудную портянку о компании, устанет заполнять форму заявки, не дождется загрузки сайта на смартфоне или ответа на свой вопрос в социальной сети. Свести к минимуму такие факапы поможет анализ сайта и всех маркетинговых активностей компании в интернете.</p>
           </div>
-        </section>
+        </div>
       </main>
-      <section class="comments">
+      <section class="comments" id="postComments">
         <div class="comments__disclaimer">
           <div class="container comments__container">
             <div class="comments__left">
@@ -374,10 +355,10 @@
             <div class="comments__left">
               <h3 class="comments__heading">09</h3>
               <p class="comments__text display--desktop">Комментариев</p>
+              <p class="comments__text display--mob">Комментариев</p>
             </div>
             <div class="comments__right">
-              <p class="comments__text display--mobile">Комментариев</p>
-              <div class="comments__filter"><a class="comments__filter__link comments__filter__link--active" href="" id="commentsFilterDate">По дате</a><a class="comments__filter__link" href="" id="commentsFilterRating">По рейтингу</a></div>
+              <div class="comments__filter__block"><a class="comments__filter__link comments__filter__link--active" href="" id="commentsFilterDate">По дате</a><a class="comments__filter__link" href="" id="commentsFilterRating">По рейтингу</a></div>
             </div>
           </div>
         </div>
@@ -385,8 +366,8 @@
           <div class="comments__item">
             <div class="container comments__container">
               <div class="comments__left">
-                <p class="comments__views">+67</p>
-                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+                <p class="comments__views" data-count="67">+67</p>
+                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
                 <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
                   <p class="comments__author__name">Андрей Петров</p>
                 </div>
@@ -404,8 +385,8 @@
           <div class="comments__item">
             <div class="container comments__container">
               <div class="comments__left">
-                <p class="comments__views">+67</p>
-                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like comments__like__btn--active" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
+                <p class="comments__views" data-count="67">+67</p>
+                <div class="comments__like"><a class="comments__like__btn comments__like__btn--like" href="">Нравится</a><a class="comments__like__btn comments__like__btn--dislike" href="">Не нравится</a></div>
                 <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
                   <p class="comments__author__name">Андрей Петров</p>
                 </div>
@@ -428,7 +409,7 @@
                 <div class="comments__author"><a class="comments__author__img" href=""><img src="img/comment-author-img.png"/></a>
                   <p class="comments__author__name">Андрей Петров</p>
                 </div>
-                <p class="comments__views">+67</p>
+                <p class="comments__views" data-count="67">+67</p>
               </div>
               <div class="comments__middle">
                 <div class="comment">
@@ -450,16 +431,16 @@
               <p>Ваш комментарий</p>
             </div>
             <div class="comments__right">
-              <form class="comments__form" method="POST" action="" id="commentsForm">
+              <form class="comments__form" method="GET" action="ajax/response.json" id="commentsForm">
                 <label for="comment"></label>
                 <textarea name="comment" id="comment"></textarea>
-                <button class="btn comments__submit" type="submit">Отправить</button>
+                <button class="btn comments__submit" type="submit" id="commentsSubmit">Отправить</button>
               </form>
             </div>
           </div>
         </div>
       </section>
-      <section class="short-section short-section--dark">
+      <section class="short-section short-section--dark" data-id="entrepreneur">
         <div class="container short-section__container">
           <div class="short-section__top">
             <div class="short-section__left">
@@ -713,6 +694,8 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
     <script src="js/bundle.js"></script>
   </body>
 </html>
