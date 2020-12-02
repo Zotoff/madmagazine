@@ -281,6 +281,14 @@
     &:focus
       border: none
       outline: none
+  &__prev
+    background: url("../img/icons/article-slider-prevarrow.svg") no-repeat center
+  &__next
+    background: url("../img/icons/article-slider-nextarrow.svg") no-repeat center
+  &__prev[aria-disabled="true"]
+    background: url("../img/icons/article-slider-prevarrow--inactive.svg") no-repeat center
+  &__next[aria-disabled="true"]
+    background: url("../img/icons/article-slider-nextarrow--inactive.svg") no-repeat center
     & img
       width: 100%
       height: 100%

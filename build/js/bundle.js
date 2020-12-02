@@ -34,25 +34,25 @@ jQuery(function () {
 
   $(window).scroll(() => {
     const scrollPosition = $(window).scrollTop();
-    const articlePoster = $(`#articlePoster`);
+    // const articlePoster = $(`#articlePoster`);
     const header = $(`#mainHeader`);
     const windowWidth = $(window).width();
-    if (articlePoster) {
-      if (windowWidth >= 768) {
-        if (scrollPosition > 350) {
-          articlePoster.addClass(`article__poster--smallHeight`);
-        } else {
-          articlePoster.removeClass(`article__poster--smallHeight`);
-        }
-      }
-      if (windowWidth < 768) {
-        if (scrollPosition > 350) {
-          articlePoster.addClass(`article__poster--smallHeight`);
-        } else {
-          articlePoster.removeClass(`article__poster--smallHeight`);
-        }
-      }
-    }
+    // if (articlePoster) {
+    //   if (windowWidth >= 768) {
+    //     if (scrollPosition > 350) {
+    //       articlePoster.addClass(`article__poster--smallHeight`);
+    //     } else {
+    //       articlePoster.removeClass(`article__poster--smallHeight`);
+    //     }
+    //   }
+    //   if (windowWidth < 768) {
+    //     if (scrollPosition > 350) {
+    //       articlePoster.addClass(`article__poster--smallHeight`);
+    //     } else {
+    //       articlePoster.removeClass(`article__poster--smallHeight`);
+    //     }
+    //   }
+    // }
     if (header) {
       if (windowWidth >= 768) {
         if (scrollPosition > 150) {
@@ -163,20 +163,20 @@ jQuery(function () {
   });
   headerSubscribeButton.on(`click`, (evt) => {
     evt.preventDefault();
-    footerSubscribeForm[0].scrollIntoView({block: `center`, behavior: `smooth`});
+    footerSubscribeForm[0].scrollIntoView({block: `start`, behavior: `smooth`});
   });
 
   if (mobileSubscribe) {
     mobileSubscribe.on(`click`, (evt) => {
       evt.preventDefault();
-      footerSubscribeForm[0].scrollIntoView({block: `center`, behavior: `smooth`});
+      footerSubscribeForm[0].scrollIntoView({block: `start`, behavior: `smooth`});
       mobileMenu.removeClass(`show`);
     });
   }
 
   postCommentsLink.on(`click`, (evt) => {
     evt.preventDefault();
-    postCommentsBlock[0].scrollIntoView({block: `center`, behavior: `smooth`});
+    postCommentsBlock[0].scrollIntoView({block: `start`, behavior: `smooth`});
   });
 
   const scrollToSection = (dataLink) => {
@@ -184,7 +184,7 @@ jQuery(function () {
     sectionsWithData.each(function () {
       const sectionWithData = $(this);
       if (dataLink === sectionWithData.attr(`data-id`)) {
-        sectionWithData[0].scrollIntoView({block: `center`, behavior: `smooth`});
+        sectionWithData[0].scrollIntoView({block: `start`, behavior: `smooth`});
       }
     });
   };
@@ -216,41 +216,23 @@ jQuery(function () {
       }
     },
     submitHandler(form) {
-      form.submit();
-    }
-  });
-
-
-  /* Handle article Slider */
-  const sliderPrevInactiveArrow = $(`.article__slider__prev[aria-disabled=true]`);
-  const sliderPrevArrow = $(`.article__slider__prev`);
-  const sliderNextArrow = $(`.article__slider__next`);
-  const sliderFirstNav = $(`.article__slider__nav`).find(`div:nth-child(1)`);
-  const sliderLastNav = $(`.article__slider__nav`).find(`div:last-child`);
-  if (sliderPrevInactiveArrow) {
-    const sliderArrowIcon = sliderPrevInactiveArrow.find(`img`);
-    sliderArrowIcon.attr(`src`, `img/icons/article-slider-prevarrow--inactive.svg`);
-  }
-  sliderNextArrow.on(`click`, () => {
-    const sliderArrowIcon = sliderPrevInactiveArrow.find(`img`);
-    sliderArrowIcon.attr(`src`, `img/icons/article-slider-prevarrow.svg`);
-  });
-
-  sliderPrevArrow.on(`click`, () => {
-    if (sliderFirstNav.hasClass(`tns-nav-active`)) {
-      const sliderArrowIcon = sliderPrevArrow.find(`img`);
-      sliderArrowIcon.attr(`src`, `img/icons/article-slider-prevarrow--inactive.svg`);
-    }
-    if (!sliderLastNav.hasClass(`tns-nav-active`)) {
-      const sliderArrowIcon = sliderNextArrow.find(`img`);
-      sliderArrowIcon.attr(`src`, `img/icons/article-slider-nextarrow.svg`);
-    }
-  });
-
-  sliderNextArrow.on(`click`, () => {
-    if (sliderLastNav.hasClass(`tns-nav-active`)) {
-      const sliderArrowIcon = sliderNextArrow.find(`img`);
-      sliderArrowIcon.attr(`src`, `img/icons/article-slider-nextarrow--inactive.svg`);
+      let comment = $(`textarea`).val();
+      $.ajax({
+          type: "GET",
+          url: "/ajax/response.json",
+          data: {name: `Author`, message: comment}
+        }).done(function( msg ) {
+          console.log(msg);
+          form.reset();
+          let commentMessage = $(`#commentMessage`);
+          commentMessage.text(`Ваш комментарий успешно отправлен`);
+          commentMessage.attr(`data-success`, true);
+        }).fail(function() {
+          let commentMessage = $(`#commentMessage`);
+          commentMessage.text(`При отправке вашего запроса возникла ошибка`)
+          console.log(`Something wrong`);
+          commentMessage.attr(`data-success`, false);
+        })
     }
   });
 
@@ -320,6 +302,7 @@ const generateRandomId = (length) => {
 };
 
 /* Post bookmark click */
+
 const article = document.querySelector(`.article`);
 const postBookmark = document.querySelector(`.post-bookmark`);
 const postBookmarkMob = document.querySelector(`.post-bookmark--mob`);
@@ -328,12 +311,68 @@ if (article) {
   article.setAttribute(`data-id`, generateRandomId(8));
 }
 
+function setCookie(name, value, options = {}) {
+
+  options = {
+    path: '/',
+    ...options
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : '[]';
+}
+
+function deleteCookie(name) {
+  setCookie(name, "", {
+    'max-age': -1
+  })
+}
+
+function checkCookieInArray(list, cookie) {
+  let result = undefined;
+
+  for (let item of list) {
+    if (item[1] === cookie[1]) {
+      result = true;
+      console.log(`In array`);
+    } else {
+      result = false;
+      console.log(`Out of array`);
+    }
+  }
+
+  return result;
+}
+
+/* Working with cookie array */
+
+let articleCookies = [];
+
 if (postBookmark) {
   postBookmark.addEventListener(`click`, (evt)=>{
     evt.preventDefault();
 
     let articleId = article.getAttribute(`data-id`);
-    let articleCookieName = `data-id`;
     let postBookmarkIcon = postBookmark.querySelector(`img`);
 
     if (postBookmarkIcon.getAttribute(`src`) === `img/icons/icon-bookmark.svg`) {
@@ -342,11 +381,28 @@ if (postBookmark) {
       postBookmarkIcon.setAttribute(`src`, `img/icons/icon-bookmark.svg`);
     }
 
-    let cookieDate = new Date();
-    cookieDate.setTime(cookieDate.getTime() + (1440 * 60 * 1000));
-    let date = cookieDate.toUTCString();
+    let newCookie = [`dataId`, articleId];
+    let articlesList = JSON.parse(getCookie('articlesList')) || [];
 
-    document.cookie = encodeURIComponent(articleCookieName) + `=` + encodeURIComponent(articleId) + `expires=` + date;
+    const filterResult = checkCookieInArray(articlesList, newCookie);
+    console.log(filterResult)
+
+    if (filterResult) {
+      console.log(`removing from array...`);
+      const filteredArray = articlesList.filter((item) => {
+        if (item[1] !== newCookie[1]) {
+          return item;
+        }
+      });
+      deleteCookie(`articlesList`);
+      console.log(`Filtered array...`, filteredArray);
+      setCookie('articlesList', JSON.stringify(filteredArray), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
+    } else {
+      console.log(`Add to array...`);
+      articlesList = articlesList.concat([newCookie]);
+      console.log(`Array with new id...`, articlesList);
+      setCookie('articlesList', JSON.stringify(articlesList), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
+    }
   });
 }
 

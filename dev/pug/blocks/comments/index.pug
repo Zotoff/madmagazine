@@ -79,7 +79,8 @@ section.comments#postComments
         .comments__left
           p Ваш комментарий
         .comments__right
-          form(method="GET", action="ajax/response.json").comments__form#commentsForm
+          form(method="GET", action="./ajax/response.json").comments__form#commentsForm
             label(for="comment")
             textarea(name="comment", id="comment")
+            span.comment__message#commentMessage(data-success=`check`)
             button(type="submit").btn.comments__submit#commentsSubmit Отправить
