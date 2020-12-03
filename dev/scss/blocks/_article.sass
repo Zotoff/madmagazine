@@ -360,7 +360,19 @@
   .post-bookmark
     color: #ffffff
     text-decoration: underline
+    position: relative
     @include base-transition
     &:hover
       color: $bg-rose
       text-decoration: none
+    &::before
+      content: ""
+      width: 20px
+      height: 30px
+      position: absolute
+      top: 0
+      left: -35px
+      background: url('../img/icons/icon-bookmark.svg')
+    &--active
+      &::before
+        background: url('../img/icons/icon-bookmark-fill.svg')

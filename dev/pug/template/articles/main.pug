@@ -26,7 +26,6 @@ main
           p.post-views 24560 просмотров
           a(href="").post-comment-link#postCommentsLink 9 комментариев
           a(href="").post-bookmark
-            img(src="img/icons/icon-bookmark.svg")
             |  Прочесть позже
       .article__poster__bottom
         .article__poster__social
@@ -60,7 +59,7 @@ main
             li
               a(href="")
                 img(src="img/icons/fb-share.svg")
-  section.article__contain
+  section.article__contain.ha-waypoint(data-animate-down="ha-header-small", data-animate-up="ha-header-large")
     .wp-block-columns
       .wp-block-column
         h3.article__subheading Содержание статьи

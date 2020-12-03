@@ -33,43 +33,61 @@ jQuery(function () {
   /* Handle scroll */
 
   $(window).scroll(() => {
-    const scrollPosition = $(window).scrollTop();
-    // const articlePoster = $(`#articlePoster`);
-    const header = $(`#mainHeader`);
-    const windowWidth = $(window).width();
-    // if (articlePoster) {
+    // const scrollPosition = $(window).scrollTop();
+    // // const articlePoster = $(`#articlePoster`);
+    // const header = $(`#mainHeader`);
+    // const windowWidth = $(window).width();
+    // // if (articlePoster) {
+    // //   if (windowWidth >= 768) {
+    // //     if (scrollPosition > 350) {
+    // //       articlePoster.addClass(`article__poster--smallHeight`);
+    // //     } else {
+    // //       articlePoster.removeClass(`article__poster--smallHeight`);
+    // //     }
+    // //   }
+    // //   if (windowWidth < 768) {
+    // //     if (scrollPosition > 350) {
+    // //       articlePoster.addClass(`article__poster--smallHeight`);
+    // //     } else {
+    // //       articlePoster.removeClass(`article__poster--smallHeight`);
+    // //     }
+    // //   }
+    // // }
+    // if (header) {
     //   if (windowWidth >= 768) {
-    //     if (scrollPosition > 350) {
-    //       articlePoster.addClass(`article__poster--smallHeight`);
+    //     if (scrollPosition > 150) {
+    //       header.addClass(`header--smallHeight`);
     //     } else {
-    //       articlePoster.removeClass(`article__poster--smallHeight`);
+    //       header.removeClass(`header--smallHeight`);
     //     }
     //   }
     //   if (windowWidth < 768) {
-    //     if (scrollPosition > 350) {
-    //       articlePoster.addClass(`article__poster--smallHeight`);
+    //     if (scrollPosition > 150) {
+    //       header.addClass(`header--smallHeight`);
     //     } else {
-    //       articlePoster.removeClass(`article__poster--smallHeight`);
+    //       header.removeClass(`header--smallHeight`);
     //     }
     //   }
     // }
-    if (header) {
-      if (windowWidth >= 768) {
-        if (scrollPosition > 150) {
-          header.addClass(`header--smallHeight`);
-        } else {
-          header.removeClass(`header--smallHeight`);
-        }
-      }
-      if (windowWidth < 768) {
-        if (scrollPosition > 150) {
-          header.addClass(`header--smallHeight`);
-        } else {
-          header.removeClass(`header--smallHeight`);
-        }
-      }
-    }
   });
+
+  /* Header resize */
+// var $head = $( '.header' );
+// $( '.ha-waypoint' ).each( function(i) {
+// 	var $el = $( this ),
+// 		animClassDown = $el.data( 'animateDown' ),
+// 		animClassUp = $el.data( 'animateUp' );
+
+// 	$el.waypoint( function( direction ) {
+// 		if( direction === 'down' && animClassDown ) {
+//       $head.attr('class', 'header ha-header ' + animClassDown);
+// 		}
+// 		else if( direction === 'up' && animClassUp ){
+//       $head.attr('class', 'header ha-header ' + animClassUp);
+//       console.log(`up`);
+// 		}
+// 	}, { offset: '100%' } );
+// } );
 
   /* Handle comments like buttons */
 
@@ -149,7 +167,7 @@ jQuery(function () {
     commentItems.each(function () {
       checkCommentLike($(this));
       $(this).attr(`data-commentid`, `comment-${generateRandomId(8)}`);
-      $(this).attr(`data-commenturl`, `http://localhost:3000/ajax/response.json`);
+      $(this).attr(`data-commenturl`, `./ajax/response.json`);
     });
   });
 
@@ -176,7 +194,8 @@ jQuery(function () {
 
   postCommentsLink.on(`click`, (evt) => {
     evt.preventDefault();
-    postCommentsBlock[0].scrollIntoView({block: `start`, behavior: `smooth`});
+    // postCommentsBlock[0].scrollIntoView({block: `start`, behavior: `smooth`});
+    $('html,body').animate({scrollTop: $(`.comments__filter`).offset().top - $('#mainHeader').outerHeight()}, 500);
   });
 
   const scrollToSection = (dataLink) => {
@@ -184,7 +203,8 @@ jQuery(function () {
     sectionsWithData.each(function () {
       const sectionWithData = $(this);
       if (dataLink === sectionWithData.attr(`data-id`)) {
-        sectionWithData[0].scrollIntoView({block: `start`, behavior: `smooth`});
+        // sectionWithData[0].scrollIntoView({block: `start`, behavior: `smooth`});
+        $('html,body').animate({scrollTop: $(this).offset().top - $('#mainHeader').outerHeight()}, 500);
       }
     });
   };
@@ -200,41 +220,47 @@ jQuery(function () {
   });
 
   const commentsForm = $(`#commentsForm`);
-  commentsForm[0].reset();
 
-  commentsForm.validate({
-    rules: {
-      comment: {
-        required: true,
-        minlength: 2
-      }
-    },
-    messages: {
-      comment: {
-        required: `Заполните поле!`,
-        minlength: `Допустимо минимум два символа при вводе имени`
-      }
-    },
-    submitHandler(form) {
-      let comment = $(`textarea`).val();
-      $.ajax({
-          type: "GET",
-          url: "/ajax/response.json",
-          data: {name: `Author`, message: comment}
-        }).done(function( msg ) {
-          console.log(msg);
-          form.reset();
-          let commentMessage = $(`#commentMessage`);
-          commentMessage.text(`Ваш комментарий успешно отправлен`);
-          commentMessage.attr(`data-success`, true);
-        }).fail(function() {
-          let commentMessage = $(`#commentMessage`);
-          commentMessage.text(`При отправке вашего запроса возникла ошибка`)
-          console.log(`Something wrong`);
-          commentMessage.attr(`data-success`, false);
-        })
+  if (commentsForm) {
+    if (commentsForm[0]) {
+      commentsForm[0].reset();
     }
-  });
+
+    commentsForm.validate({
+      rules: {
+        comment: {
+          required: true,
+          minlength: 2
+        }
+      },
+      messages: {
+        comment: {
+          required: `Заполните поле!`,
+          minlength: `Допустимо минимум два символа при вводе имени`
+        }
+      },
+      submitHandler(form) {
+        let comment = $(`textarea`).val();
+        $.ajax({
+            type: "GET",
+            url: "./ajax/response.json",
+            data: {name: `Author`, message: comment}
+          }).done(function( msg ) {
+            console.log(msg);
+            form.reset();
+            let commentMessage = $(`#commentMessage`);
+            commentMessage.text(`Ваш комментарий успешно отправлен`);
+            commentMessage.attr(`data-success`, true);
+          }).fail(function() {
+            let commentMessage = $(`#commentMessage`);
+            commentMessage.text(`При отправке вашего запроса возникла ошибка`)
+            console.log(`Something wrong`);
+            commentMessage.attr(`data-success`, false);
+          })
+      }
+    });
+  }
+
 
 });
 
@@ -348,61 +374,30 @@ function deleteCookie(name) {
   })
 }
 
-function checkCookieInArray(list, cookie) {
-  let result = undefined;
-
-  for (let item of list) {
-    if (item[1] === cookie[1]) {
-      result = true;
-      console.log(`In array`);
-    } else {
-      result = false;
-      console.log(`Out of array`);
-    }
-  }
-
-  return result;
-}
-
-/* Working with cookie array */
-
-let articleCookies = [];
+/* Working with cookies on bookmarks */
 
 if (postBookmark) {
   postBookmark.addEventListener(`click`, (evt)=>{
     evt.preventDefault();
 
     let articleId = article.getAttribute(`data-id`);
-    let postBookmarkIcon = postBookmark.querySelector(`img`);
 
-    if (postBookmarkIcon.getAttribute(`src`) === `img/icons/icon-bookmark.svg`) {
-      postBookmarkIcon.setAttribute(`src`, `img/icons/icon-bookmark-fill.svg`);
-    } else {
-      postBookmarkIcon.setAttribute(`src`, `img/icons/icon-bookmark.svg`);
+    let state = 0;
+
+    postBookmark.classList.toggle('post-bookmark--active');
+    postBookmark.toggleAttribute(`enabled`);
+
+    if (postBookmark.classList.contains('post-bookmark--active')) {
+      state = 1;
     }
-
-    let newCookie = [`dataId`, articleId];
     let articlesList = JSON.parse(getCookie('articlesList')) || [];
 
-    const filterResult = checkCookieInArray(articlesList, newCookie);
-    console.log(filterResult)
-
-    if (filterResult) {
-      console.log(`removing from array...`);
-      const filteredArray = articlesList.filter((item) => {
-        if (item[1] !== newCookie[1]) {
-          return item;
-        }
-      });
-      deleteCookie(`articlesList`);
-      console.log(`Filtered array...`, filteredArray);
-      setCookie('articlesList', JSON.stringify(filteredArray), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
-    } else {
-      console.log(`Add to array...`);
-      articlesList = articlesList.concat([newCookie]);
-      console.log(`Array with new id...`, articlesList);
-      setCookie('articlesList', JSON.stringify(articlesList), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
+    if (state && articlesList.indexOf(articleId) == -1) {
+      articlesList.push(articleId);
+    } else if (!state && articlesList.indexOf(articleId) != -1) {
+      articlesList = articlesList.filter(item => item != articleId);
     }
+    setCookie('articlesList', JSON.stringify(articlesList), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
   });
 }
 
@@ -427,6 +422,7 @@ if (postBookmarkMob) {
     document.cookie = encodeURIComponent(articleCookieName) + `=` + encodeURIComponent(articleId) + `expires=` + date;
   });
 }
+
 
 
 /***/ }),
