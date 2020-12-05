@@ -1,65 +1,6 @@
 "use strict";
 jQuery(function () {
 
-  /* Handle scroll */
-
-  $(window).scroll(() => {
-    // const scrollPosition = $(window).scrollTop();
-    // // const articlePoster = $(`#articlePoster`);
-    // const header = $(`#mainHeader`);
-    // const windowWidth = $(window).width();
-    // // if (articlePoster) {
-    // //   if (windowWidth >= 768) {
-    // //     if (scrollPosition > 350) {
-    // //       articlePoster.addClass(`article__poster--smallHeight`);
-    // //     } else {
-    // //       articlePoster.removeClass(`article__poster--smallHeight`);
-    // //     }
-    // //   }
-    // //   if (windowWidth < 768) {
-    // //     if (scrollPosition > 350) {
-    // //       articlePoster.addClass(`article__poster--smallHeight`);
-    // //     } else {
-    // //       articlePoster.removeClass(`article__poster--smallHeight`);
-    // //     }
-    // //   }
-    // // }
-    // if (header) {
-    //   if (windowWidth >= 768) {
-    //     if (scrollPosition > 150) {
-    //       header.addClass(`header--smallHeight`);
-    //     } else {
-    //       header.removeClass(`header--smallHeight`);
-    //     }
-    //   }
-    //   if (windowWidth < 768) {
-    //     if (scrollPosition > 150) {
-    //       header.addClass(`header--smallHeight`);
-    //     } else {
-    //       header.removeClass(`header--smallHeight`);
-    //     }
-    //   }
-    // }
-  });
-
-  /* Header resize */
-// var $head = $( '.header' );
-// $( '.ha-waypoint' ).each( function(i) {
-// 	var $el = $( this ),
-// 		animClassDown = $el.data( 'animateDown' ),
-// 		animClassUp = $el.data( 'animateUp' );
-
-// 	$el.waypoint( function( direction ) {
-// 		if( direction === 'down' && animClassDown ) {
-//       $head.attr('class', 'header ha-header ' + animClassDown);
-// 		}
-// 		else if( direction === 'up' && animClassUp ){
-//       $head.attr('class', 'header ha-header ' + animClassUp);
-//       console.log(`up`);
-// 		}
-// 	}, { offset: '100%' } );
-// } );
-
   /* Handle comments like buttons */
 
   const mobileNav = $(`#headerMobileNav`);
@@ -165,8 +106,7 @@ jQuery(function () {
 
   postCommentsLink.on(`click`, (evt) => {
     evt.preventDefault();
-    // postCommentsBlock[0].scrollIntoView({block: `start`, behavior: `smooth`});
-    $('html,body').animate({scrollTop: $(`.comments__filter`).offset().top - $('#mainHeader').outerHeight()}, 500);
+    $('html,body').animate({scrollTop: $(`.comments__filter`).offset().top - $('#mainHeader').outerHeight() + 15}, 500);
   });
 
   const scrollToSection = (dataLink) => {
@@ -174,8 +114,7 @@ jQuery(function () {
     sectionsWithData.each(function () {
       const sectionWithData = $(this);
       if (dataLink === sectionWithData.attr(`data-id`)) {
-        // sectionWithData[0].scrollIntoView({block: `start`, behavior: `smooth`});
-        $('html,body').animate({scrollTop: $(this).offset().top - $('#mainHeader').outerHeight()}, 500);
+        $('html,body').animate({scrollTop: $(this).offset().top - $('#mainHeader').outerHeight() + 15}, 500);
       }
     });
   };
@@ -198,18 +137,6 @@ jQuery(function () {
     }
 
     commentsForm.validate({
-      rules: {
-        comment: {
-          required: true,
-          minlength: 2
-        }
-      },
-      messages: {
-        comment: {
-          required: `Заполните поле!`,
-          minlength: `Допустимо минимум два символа при вводе имени`
-        }
-      },
       submitHandler(form) {
         let comment = $(`textarea`).val();
         $.ajax({

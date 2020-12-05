@@ -441,7 +441,7 @@
             <div class="comments__right">
               <form class="comments__form" method="GET" action="./ajax/response.json" id="commentsForm">
                 <label for="comment"></label>
-                <textarea name="comment" id="comment"></textarea><span class="comment__message" id="commentMessage" data-success="check"></span>
+                <textarea name="comment" id="comment" required="required" data-msg="Пожалуйста, заполните это поле!" data-rule-minlength="2" data-msg-minlength="At least two chars"></textarea><span class="comment__message" id="commentMessage" data-success="check"></span>
                 <button class="btn comments__submit" type="submit" id="commentsSubmit">Отправить</button>
               </form>
             </div>

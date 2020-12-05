@@ -30,6 +30,7 @@ $.gulp.task(`default`, $.gulp.series(
         `imagescopy`,
         `iconscopy`,
         `jscopy`,
+        `ajaxcopy`,
         `phpcopy`,
         `fontscopy`
     ),
