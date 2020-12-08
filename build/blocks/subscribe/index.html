@@ -1,0 +1,14 @@
+
+<div class="subscribe">
+  <div class="container">
+    <h2>Больше историй о бизнесе - у вас в почте</h2>
+    <p>Подпишитесь на рассылку для предпринимателей: раз в месяц присылаем вам важные новости и истории успеха.</p>
+    <form class="subscribe__form" method="POST" action="./ajax/response.json" novalidate="novalidate" id="subscribeForm">
+      <label for="email">
+        <input type="email" placeholder="ivan@gmail.com" name="email" id="subscribeEmail" required="required" data-msg="Пожалуйста, заполните это поле!" data-rule-email="data-rule-email" data-msg-email="Пожалуйста, введите корректный адрес электронной почты"/>
+        <label id="subscribeMessage"></label>
+      </label>
+      <button class="btn subscribe__submit" type="submit">Подписаться</button>
+    </form>
+  </div>
+</div>

@@ -81,6 +81,6 @@ section.comments#postComments
         .comments__right
           form(method="GET", action="./ajax/response.json").comments__form#commentsForm
             label(for="comment")
-            textarea(name="comment", id="comment", required, data-msg="Пожалуйста, заполните это поле!", data-rule-minlength="2", data-msg-minlength="At least two chars")
-            span.comment__message#commentMessage(data-success=`check`)
+              textarea(name="comment", id="comment", required, data-msg="Пожалуйста, заполните это поле!", data-rule-minlength="2", data-msg-minlength="At least two chars")
+              span.comment__message#commentMessage(data-success=`check`)
             button(type="submit").btn.comments__submit#commentsSubmit Отправить

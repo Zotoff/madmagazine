@@ -158,9 +158,12 @@ jQuery(function () {
     });
   });
 
+  /* Comments form */
+
   const commentsForm = $(`#commentsForm`);
 
   if (commentsForm) {
+    const commentsUrl =  commentsForm.attr(`action`);
     if (commentsForm[0]) {
       commentsForm[0].reset();
     }
@@ -170,7 +173,7 @@ jQuery(function () {
         let comment = $(`textarea`).val();
         $.ajax({
             type: "GET",
-            url: "./ajax/response.json",
+            url: commentsUrl,
             data: {name: `Author`, message: comment}
           }).done(function( msg ) {
             console.log(msg);
@@ -188,6 +191,93 @@ jQuery(function () {
     });
   }
 
+  /* Subscribe form */
+
+  const subscribeForm = $(`#subscribeForm`);
+
+  if (subscribeForm) {
+    const subscribeUrl = subscribeForm.attr(`action`);
+    if (subscribeForm[0]) {
+      subscribeForm[0].reset();
+    }
+
+    subscribeForm.validate({
+      submitHandler(form) {
+        let email = $(`#subscribeEmail`).val();
+        $.ajax({
+            type: "GET",
+            url: subscribeUrl,
+            data: {name: `Author`, email: email}
+          }).done(function( msg ) {
+            console.log(msg);
+            form.reset();
+            let subscribeMessage = $(`#subscribeMessage`);
+            subscribeMessage.text(`Вы успешно подписались на рассылку!`);
+            subscribeMessage.attr(`data-success`, true);
+          }).fail(function() {
+            let subscribeMessage = $(`#subscribeMessage`);
+            subscribeMessage.text(`При отправке вашего запроса возникла ошибка`)
+            console.log(`Something wrong`);
+            subscribeMessage.attr(`data-success`, false);
+          })
+      }
+    });
+  }
+
+  /* Illustration handle */
+  const articleIllustrations = $(`.article__illustration`);
+  articleIllustrations.each(function() {
+    const illustration = $(this);
+    const img = $(this).find(`img`);
+    const figCaption = $(this).find(`figcaption`);
+    const imgWidth = $(this).data(`width`);
+    const imgHeight = $(this).data(`height`);
+    const imgAlign = $(this).data(`align`);
+    img.attr(`width`, imgWidth);
+    img.attr(`height`, imgHeight);
+    switch(imgAlign) {
+      case `center`:
+        illustration.css(`justify-content`, `center`);
+        figCaption.css(`text-align`, `center`);
+        break;
+      case `left`:
+        illustration.css(`justify-content`, `flex-start`);
+        figCaption.css(`text-align`, `left`);
+        break;
+      default:
+        illustration.css(`justify-content`, `flex-end`);
+        figCaption.css(`text-align`, `right`);
+    }
+  });
+
+  /* Buttons */
+  const goButtons = $(`.btn__go`);
+  goButtons.each(function(){
+    const goButton = $(this);
+    const goButtonColor = $(this).data(`color`);
+    const goButtonBackground = $(this).data(`background`);
+    const goButtonRadius = $(this).data(`radius`);
+    const goButtonAlign = $(this).data(`align`);
+    const goButtonHref = $(this).data(`href`);
+    const goButtonTarget = $(this).data(`target`);
+
+    goButton.css(`color`, goButtonColor);
+    goButton.css(`background-color`, goButtonBackground);
+    goButton.css(`border-radius`, `${goButtonRadius}px`);
+    goButton.attr(`href`, goButtonHref);
+    goButton.attr(`target`, goButtonTarget);
+
+    switch(goButtonAlign) {
+      case `left`:
+        goButton.css({'margin-left': '0', 'margin-right': 'auto'});
+        break;
+      case `right`:
+        goButton.css({'margin-left': 'auto', 'margin-right': '0'});
+        break;
+      default:
+        goButton.css({'margin-left': 'auto', 'margin-right': 'auto'});
+    }
+  })
 
 });
 

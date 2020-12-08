@@ -1,0 +1,21 @@
+.inset
+  width: 100%
+  height: auto
+  @include flex(center, center)
+  margin-bottom: 80px
+  margin-top: 80px
+  @include mad-mobile()
+    margin-top: 40px
+    margin-bottom: 40px
+  h2,
+  h3,
+  h4
+    padding-left: 0px
+    padding-bottom: 45px
+  &--background
+    background-color: $bg-lightgrey
+    color: $bg-black
+  &--lines
+    background: transparent
+    border-top: 2px solid $bg-black
+    border-bottom: 2px solid $bg-black

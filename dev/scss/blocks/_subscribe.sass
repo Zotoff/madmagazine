@@ -1,0 +1,60 @@
+.subscribe
+  background-color: $bg-lightgrey
+  h2
+    padding-left: 0
+    @include mad-mobile()
+      margin-bottom: 30px
+  &__form
+    width: 100%
+    height: auto
+    @include flex(space-between, flex-start)
+    margin-bottom: 50px
+    @include mad-mobile()
+      margin-bottom: 0
+    label
+      width: 70%
+      height: auto
+      @include mad-tablet()
+        width: 49%
+      @include mad-mobile()
+        width: 100%
+        margin-bottom: 30px
+      input[type=email]
+        width: 100%
+        height: 60px
+        color: $bg-black
+        padding-left: 10px
+        border: 1px solid $bg-basicgrey
+        border-radius: 5px
+        &::placeholder
+          color: $bg-basicgrey
+          padding-left: 10px
+  &__submit
+    background-color: $bg-rose
+    color: #ffffff
+    font-size: 12px
+    line-height: 22
+    text-decoration: underline
+    text-transform: uppercase
+    text-decoration-skip-ink: none
+    border: none
+    outline: none
+    @include base-transition
+    &:hover
+      background-color: #000000
+      text-decoration: none
+      border: none
+      outline: none
+    &:focus
+      background-color: #000000
+      text-decoration: none
+      border: none
+      outline: none
+    @include mad-mobile()
+      width: 100%
+#subscribeEmail-error,
+#subscribeEmail-success,
+#subscribeMessage
+  display: block
+  margin-top: 15px
+  color: $bg-black
