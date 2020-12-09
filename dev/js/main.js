@@ -220,36 +220,6 @@ jQuery(function () {
         figCaption.css(`text-align`, `right`);
     }
   });
-
-  /* Buttons */
-  const goButtons = $(`.btn__go`);
-  goButtons.each(function(){
-    const goButton = $(this);
-    const goButtonColor = $(this).data(`color`);
-    const goButtonBackground = $(this).data(`background`);
-    const goButtonRadius = $(this).data(`radius`);
-    const goButtonAlign = $(this).data(`align`);
-    const goButtonHref = $(this).data(`href`);
-    const goButtonTarget = $(this).data(`target`);
-
-    goButton.css(`color`, goButtonColor);
-    goButton.css(`background-color`, goButtonBackground);
-    goButton.css(`border-radius`, `${goButtonRadius}px`);
-    goButton.attr(`href`, goButtonHref);
-    goButton.attr(`target`, goButtonTarget);
-
-    switch(goButtonAlign) {
-      case `left`:
-        goButton.css({'margin-left': '0', 'margin-right': 'auto'});
-        break;
-      case `right`:
-        goButton.css({'margin-left': 'auto', 'margin-right': '0'});
-        break;
-      default:
-        goButton.css({'margin-left': 'auto', 'margin-right': 'auto'});
-    }
-  })
-
 });
 
 /* Initiate sliders */
@@ -318,8 +288,7 @@ const generateRandomId = (length) => {
 /* Post bookmark click */
 
 const article = document.querySelector(`.article`);
-const postBookmark = document.querySelector(`.post-bookmark`);
-const postBookmarkMob = document.querySelector(`.post-bookmark--mob`);
+const postBookmark = document.querySelectorAll(`.post-bookmark`);
 
 if (article) {
   article.setAttribute(`data-id`, generateRandomId(8));
@@ -363,51 +332,30 @@ function deleteCookie(name) {
 }
 
 /* Working with cookies on bookmarks */
-
 if (postBookmark) {
-  postBookmark.addEventListener(`click`, (evt)=>{
-    evt.preventDefault();
+  postBookmark.forEach((bookmark) => {
+    bookmark.addEventListener(`click`, (evt)=>{
+      evt.preventDefault();
 
-    let articleId = article.getAttribute(`data-id`);
+      let articleId = article.getAttribute(`data-id`);
 
-    let state = 0;
+      let state = 0;
 
-    postBookmark.classList.toggle('post-bookmark--active');
-    postBookmark.toggleAttribute(`enabled`);
+      bookmark.classList.toggle('post-bookmark--active');
+      bookmark.toggleAttribute(`enabled`);
 
-    if (postBookmark.classList.contains('post-bookmark--active')) {
-      state = 1;
-    }
-    let articlesList = JSON.parse(getCookie('articlesList')) || [];
+      if (bookmark.classList.contains('post-bookmark--active')) {
+        state = 1;
+      }
+      let articlesList = JSON.parse(getCookie('articlesList')) || [];
 
-    if (state && articlesList.indexOf(articleId) == -1) {
-      articlesList.push(articleId);
-    } else if (!state && articlesList.indexOf(articleId) != -1) {
-      articlesList = articlesList.filter(item => item != articleId);
-    }
-    setCookie('articlesList', JSON.stringify(articlesList), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
-  });
-}
-
-if (postBookmarkMob) {
-  postBookmarkMob.addEventListener(`click`, (evt)=>{
-    evt.preventDefault();
-
-    let articleId = article.getAttribute(`data-id`);
-    let articleCookieName = `data-id`;
-    let postBookmarkIcon = postBookmarkMob.querySelector(`img`);
-
-    if (postBookmarkIcon.getAttribute(`src`) === `img/icons/icon-bookmark.svg`) {
-      postBookmarkIcon.setAttribute(`src`, `img/icons/icon-bookmark-fill.svg`);
-    } else {
-      postBookmarkIcon.setAttribute(`src`, `img/icons/icon-bookmark.svg`);
-    }
-
-    let cookieDate = new Date();
-    cookieDate.setTime(cookieDate.getTime() + (1440 * 60 * 1000));
-    let date = cookieDate.toUTCString();
-
-    document.cookie = encodeURIComponent(articleCookieName) + `=` + encodeURIComponent(articleId) + `expires=` + date;
+      if (state && articlesList.indexOf(articleId) == -1) {
+        articlesList.push(articleId);
+      } else if (!state && articlesList.indexOf(articleId) != -1) {
+        articlesList = articlesList.filter(item => item != articleId);
+      }
+      setCookie('articlesList', JSON.stringify(articlesList), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
+    });
   });
 }
 

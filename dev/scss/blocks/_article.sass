@@ -376,3 +376,43 @@
     &--active
       &::before
         background: url('../img/icons/icon-bookmark-fill.svg')
+
+.elementor-button
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 358px
+  height: 60px
+  border-radius: 30px
+  transition: all .2s ease-in
+  &:hover
+    cursor: pointer
+    text-decoration: none
+  @include mad-mobile()
+    width: 172px
+    height: 30px
+    font-size: 10px !important
+    line-height: 22px !important
+
+.elementor-widget-button
+  background-color: $bg-rose
+  color: #ffffff
+  font-size: 12px
+  line-height: 22
+  text-decoration: underline
+  text-transform: uppercase
+  text-decoration-skip-ink: none
+  border: none
+  outline: none
+  &:hover
+    background-color: #000000
+    text-decoration: none
+    border: none
+    outline: none
+  &:focus
+    background-color: #000000
+    text-decoration: none
+    border: none
+    outline: none
+  @include mad-mobile()
+    width: 100%

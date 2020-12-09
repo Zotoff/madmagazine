@@ -27,9 +27,10 @@
       height: 100%
       background-color: rgba(0, 0, 0, .6)
       z-index: 1900
-  & .wp-block-image
+  & figure.wp-block-image
     position: absolute
     width: 100%
+    max-width: 100%
     height: 100%
     top: 0
     left: 0
@@ -107,25 +108,29 @@
       line-height: 22px
       color: $bg-lightgrey
   & .post-author
-    font-size: 12px
+    font-size: 16px
     line-height: 22px
     color: #ffffff
     text-decoration: underline
     text-decoration-skip-ink: none
     @include base-transition
+    @include mad-mobile()
+      font-size: 16px
     &:hover
       cursor: pointer
       color: $bg-rose
       text-decoration: none
   & .post-views
-    font-size: 12px
+    font-size: 16px
     line-height: 22px
     color: #ffffff
     text-decoration: none
     @include mad-tablet()
       margin-right: 20px
+    @include mad-mobile()
+      font-size: 16px
   & .post-comment-link
-    font-size: 12px
+    font-size: 16px
     line-height: 22px
     color: #ffffff
     text-decoration: underline
@@ -136,7 +141,9 @@
       color: $bg-rose
       text-decoration: none
     @include mad-tablet()
-      margin-right: 20px
+      margin-right: 43px
+    @media (min-width: 1200px)
+      margin-right: 12px
   & .post-bookmark
     @include flex(space-between, flex-start)
     img

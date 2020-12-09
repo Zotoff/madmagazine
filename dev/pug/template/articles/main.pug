@@ -45,8 +45,7 @@ main
           a(href="").post-author Андрей Иванов
           a(href="").post-comment-link 9 комментариев
         .article__poster__right
-          a(href="").post-bookmark.post-bookmark--mob
-            img(src="img/icons/icon-bookmark.svg")
+          a(href="").post-bookmark
       .article__poster__bottom
         .article__poster__social
           ul
@@ -202,6 +201,11 @@ main
               th Статья расхода
               th Планировали
               th Потратили
+          tfoot
+            tr
+              td Итого
+              td 2 000 Р
+              td 2 000 Р
           tbody
             tr
               td Кофемашина
@@ -237,4 +241,4 @@ main
       figure(data-align="center" data-width="400" data-height="auto").article__illustration
         img(src="img/article-promo-webinar-1x.png" loading="lazy" alt="" data-fancybox="gallery" href="img/article-promo-webinar-1x.png")
         figcaption Пример иллюстрации с подписью
-      a.btn.btn__go(data-href="/", data-target="_blank", data-background="#f6004b", data-color="#ffffff", data-radius="0", data-align="center") Переход куда-то
+      a.elementor-button.elementor-widget-button Переход куда-то
