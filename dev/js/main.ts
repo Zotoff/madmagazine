@@ -1,4 +1,7 @@
 "use strict";
+
+import {$, jQuery} from 'jquery';
+
 jQuery(function () {
 
   /* Handle comments like buttons */

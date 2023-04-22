@@ -1,10 +1,12 @@
 'use strict';
 
+const sass = require('gulp-sass')(require('sass'));
+
 module.exports = function() {
     $.gulp.task('sass', function() {
         return $.gulp.src('./dev/scss/main.scss')
         .pipe($.gp.sourcemaps.init())
-        .pipe($.gp.sass())
+        .pipe(sass())
         .pipe($.gp.csso())
         .on('error', $.gp.notify.onError(function(error) {
             return {
