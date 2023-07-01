@@ -4,8 +4,9 @@ module.exports = {
   entry: [
     "./dev/js/modules/validation/jquery.validate.min.js",
     "./dev/js/modules/validation/additional-methods.min.js",
-    "./dev/js/constants.ts",
-    "./dev/js/network.ts",
+    "./dev/js/modules/jquery.waypoints.min.js",
+    "./dev/js/modules/noframework.waypoints.min.js",
+    "./dev/js/modules/jquery.fancybox.min.js",
     "./dev/js/main.ts"
   ],
   module: {
@@ -21,7 +22,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: "./build/js/bundle.js",
+    filename: "./build/js/script.js",
     path: path.resolve(__dirname),
     iife: true
   },

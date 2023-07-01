@@ -1,8 +1,9 @@
 "use strict";
 
-import {$, jQuery} from 'jquery';
+import * as $ from "jquery";
+import {tns, TinySliderInstance } from 'tiny-slider/src/tiny-slider';
 
-jQuery(function () {
+$(document).ready(() => {
 
   /* Handle comments like buttons */
 
@@ -15,14 +16,15 @@ jQuery(function () {
   const postCommentsLink = $(`#postCommentsLink`);
   const postCommentsBlock = $(`#postComments`);
 
-  const checkCommentLike = (item) => {
+  /* Handle comment like */
+  const checkCommentLike = (item: JQuery<Element>): void => {
     const commentLikeButton = item.find(`.comments__like__btn--like`);
     const commentDisLikeButton = item.find(`.comments__like__btn--dislike`);
     const commentCount = item.find(`.comments__views`);
     let commentCountValue = +commentCount.attr(`data-count`);
 
-
-    commentLikeButton.on(`click`, (evt) => {
+    /* Handle comment like btn click */
+    commentLikeButton.on(`click`, (evt: Event) => {
       evt.preventDefault();
       commentDisLikeButton.removeClass(`comments__like__btn--active`);
       commentLikeButton.addClass(`comments__like__btn--active`);
@@ -48,7 +50,9 @@ jQuery(function () {
         }
       });
     });
-    commentDisLikeButton.on(`click`, (evt) => {
+
+    /* Handle comment dislike btn click */
+    commentDisLikeButton.on(`click`, (evt: Event) => {
       evt.preventDefault();
       commentDisLikeButton.addClass(`comments__like__btn--active`);
       commentLikeButton.removeClass(`comments__like__btn--active`);
@@ -76,21 +80,28 @@ jQuery(function () {
     });
   };
 
+  /* Handle comment blocks */
+
   const commentBlocks = $(`.comments__block:not(.comments__block__form)`);
-  commentBlocks.each(function () {
-    const commentItems = $(this).find(`.comments__item`);
-    commentItems.each(function () {
+  commentBlocks.each(function (this: HTMLElement): void {
+
+    const $this: JQuery<HTMLElement> = $(this) as JQuery<HTMLElement>;
+    
+    const commentItems = $this.find(`.comments__item`);
+    commentItems.each(function (this: HTMLElement) {
       checkCommentLike($(this));
       $(this).attr(`data-commentid`, `comment-${generateRandomId(8)}`);
       $(this).attr(`data-commenturl`, `./ajax/response.json`);
     });
   });
 
-  mobileNav.on(`click`, (evt) => {
+  /* Handle mobile nav */
+
+  mobileNav.on(`click`, (evt: Event) => {
     evt.preventDefault();
     mobileMenu.addClass(`show`);
   });
-  mobileClose.on(`click`, (evt) => {
+  mobileClose.on(`click`, (evt: Event) => {
     evt.preventDefault();
     mobileMenu.removeClass(`show`);
   });
@@ -100,34 +111,39 @@ jQuery(function () {
   });
 
   if (mobileSubscribe) {
-    mobileSubscribe.on(`click`, (evt) => {
+    mobileSubscribe.on(`click`, (evt: Event) => {
       evt.preventDefault();
       footerSubscribeForm[0].scrollIntoView({block: `start`, behavior: `smooth`});
       mobileMenu.removeClass(`show`);
     });
-  }
+  };
 
-  postCommentsLink.on(`click`, (evt) => {
+  /* Handle post comments click */
+
+  postCommentsLink.on(`click`, (evt: Event) => {
     evt.preventDefault();
     $('html,body').animate({scrollTop: $(`.comments__filter`).offset().top - $('#mainHeader').outerHeight() + 15}, 500);
   });
 
-  const scrollToSection = (dataLink) => {
+  /* Scroll to section function */
+  const scrollToSection = (dataLink: string): void => {
     const sectionsWithData = $(`section.short-section`);
-    sectionsWithData.each(function () {
-      const sectionWithData = $(this);
-      if (dataLink === sectionWithData.attr(`data-id`)) {
-        $('html,body').animate({scrollTop: $(this).offset().top - $('#mainHeader').outerHeight() + 15}, 500);
+    sectionsWithData.each(function (index: number, element: HTMLElement): false | void {
+      const $this = $(this);
+      if (dataLink === $this.attr(`data-id`)) {
+        $('html,body').animate({scrollTop: $this.offset().top - $('#mainHeader').outerHeight() + 15}, 500);
       }
     });
   };
 
+  /* Handle category nav list click */
+  
   const categoryNavList = $(`#categoryNavList li a`);
-  categoryNavList.each(function (item) {
-    const navLink = $(this);
-    navLink.on(`click`, (evt) => {
+  categoryNavList.each(function (index: number, element: HTMLElement): false | void {
+    const $this = $(this);
+    $this.on(`click`, (evt) => {
       evt.preventDefault();
-      const navLinkDataLink = $(this).attr(`data-link`);
+      const navLinkDataLink = $this.attr(`data-link`);
       scrollToSection(navLinkDataLink);
     });
   });
@@ -135,15 +151,13 @@ jQuery(function () {
   /* Comments form */
 
   const commentsForm = $(`#commentsForm`);
+  const commentsUrl =  commentsForm.attr(`action`);
 
   if (commentsForm) {
-    const commentsUrl =  commentsForm.attr(`action`);
-    if (commentsForm[0]) {
-      commentsForm[0].reset();
-    }
+    commentsForm.trigger('reset');
 
     commentsForm.validate({
-      submitHandler(form) {
+      submitHandler(form: HTMLFormElement) {
         let comment = $(`textarea`).val();
         $.ajax({
             type: "GET",
@@ -154,12 +168,12 @@ jQuery(function () {
             form.reset();
             let commentMessage = $(`#commentMessage`);
             commentMessage.text(`Ваш комментарий успешно отправлен`);
-            commentMessage.attr(`data-success`, true);
+            commentMessage.attr(`data-success`, 'true');
           }).fail(function() {
             let commentMessage = $(`#commentMessage`);
             commentMessage.text(`При отправке вашего запроса возникла ошибка`)
             console.log(`Something wrong`);
-            commentMessage.attr(`data-success`, false);
+            commentMessage.attr(`data-success`, 'false');
           })
       }
     });
@@ -171,12 +185,12 @@ jQuery(function () {
 
   if (subscribeForm) {
     const subscribeUrl = subscribeForm.attr(`action`);
-    if (subscribeForm[0]) {
-      subscribeForm[0].reset();
+    if (subscribeForm) {
+      subscribeForm.trigger('reset');
     }
 
     subscribeForm.validate({
-      submitHandler(form) {
+      submitHandler(form: HTMLFormElement) {
         let email = $(`#subscribeEmail`).val();
         $.ajax({
             type: "GET",
@@ -187,39 +201,42 @@ jQuery(function () {
             form.reset();
             let subscribeMessage = $(`#subscribeMessage`);
             subscribeMessage.text(`Вы успешно подписались на рассылку!`);
-            subscribeMessage.attr(`data-success`, true);
+            subscribeMessage.attr(`data-success`, 'true');
           }).fail(function() {
             let subscribeMessage = $(`#subscribeMessage`);
             subscribeMessage.text(`При отправке вашего запроса возникла ошибка`)
             console.log(`Something wrong`);
-            subscribeMessage.attr(`data-success`, false);
+            subscribeMessage.attr(`data-success`, 'false');
           })
       }
     });
   }
 
   /* Illustration handle */
+
   const articleIllustrations = $(`.article__illustration`);
-  articleIllustrations.each(function() {
-    const illustration = $(this);
-    const img = $(this).find(`img`);
-    const figCaption = $(this).find(`figcaption`);
-    const imgWidth = $(this).data(`width`);
-    const imgHeight = $(this).data(`height`);
-    const imgAlign = $(this).data(`align`);
+  articleIllustrations.each(function(index: number, element: HTMLElement): false | void {
+    const $this = $(this);
+    const img = $this.find(`img`);
+    const figCaption = $this.find(`figcaption`);
+    const imgWidth = $this.data(`width`);
+    const imgHeight = $this.data(`height`);
+    const imgAlign = $this.data(`align`);
+
     img.attr(`width`, imgWidth);
     img.attr(`height`, imgHeight);
+    
     switch(imgAlign) {
       case `center`:
-        illustration.css(`justify-content`, `center`);
+        $this.css(`justify-content`, `center`);
         figCaption.css(`text-align`, `center`);
         break;
       case `left`:
-        illustration.css(`justify-content`, `flex-start`);
+        $this.css(`justify-content`, `flex-start`);
         figCaption.css(`text-align`, `left`);
         break;
       default:
-        illustration.css(`justify-content`, `flex-end`);
+        $this.css(`justify-content`, `flex-end`);
         figCaption.css(`text-align`, `right`);
     }
   });
@@ -227,8 +244,10 @@ jQuery(function () {
 
 /* Initiate sliders */
 const articleCarousel = document.querySelector(`#articleCarousel`);
+
 if (articleCarousel) {
-  const slider = tns({
+  // @ts-ignore
+  const slider: TinySliderInstance  = tns({
     container: `#articleCarousel`,
     slideBy: `page`,
     items: 1,
@@ -240,7 +259,8 @@ if (articleCarousel) {
 
 const desktopPromoSlider = document.querySelector(`#desktopPromoSlider`);
 if (desktopPromoSlider) {
-  const desktopPromoSlider = tns({
+  // @ts-ignore
+  const desktopPromoSlider: TinySliderInstance  = tns({
     container: `#desktopPromoSlider`,
     slideBy: `page`,
     items: 1,
@@ -251,7 +271,8 @@ if (desktopPromoSlider) {
 
 const mobilePromoSlider = document.querySelector(`#mobilePromoSlider`);
 if (mobilePromoSlider) {
-  const mobilePromoSlider = tns({
+  // @ts-ignore
+  const mobilePromoSlider: TinySliderInstance  = tns({
     container: `#mobilePromoSlider`,
     slideBy: `page`,
     items: 1,
@@ -262,6 +283,7 @@ if (mobilePromoSlider) {
 
 const mainPromoSlider = document.querySelector(`#mainPromoCarousel`);
 if (mainPromoSlider) {
+  // @ts-ignore
   const mainPromoSlider = tns({
     container: `#mainPromoCarousel`,
     slideBy: `page`,
@@ -273,7 +295,7 @@ if (mainPromoSlider) {
 
 /* Generate random ID */
 
-const generateRandomId = (length) => {
+const generateRandomId = (length: number) => {
   const letters = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz`.split(``);
 
   if (!length) {
@@ -297,7 +319,9 @@ if (article) {
   article.setAttribute(`data-id`, generateRandomId(8));
 }
 
-function setCookie(name, value, options = {}) {
+/* Work with cookies */
+
+function setCookie(name: string, value: string | number, options: any = {}) {
 
   options = {
     path: '/',
@@ -321,14 +345,14 @@ function setCookie(name, value, options = {}) {
   document.cookie = updatedCookie;
 }
 
-function getCookie(name) {
+function getCookie(name: string) {
   var matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
   ));
   return matches ? decodeURIComponent(matches[1]) : '[]';
 }
 
-function deleteCookie(name) {
+function deleteCookie(name: string) {
   setCookie(name, "", {
     'max-age': -1
   })
@@ -340,7 +364,7 @@ if (postBookmark) {
     bookmark.addEventListener(`click`, (evt)=>{
       evt.preventDefault();
 
-      let articleId = article.getAttribute(`data-id`);
+      let articleId = bookmark.getAttribute(`data-id`);
 
       let state = 0;
 
@@ -355,7 +379,7 @@ if (postBookmark) {
       if (state && articlesList.indexOf(articleId) == -1) {
         articlesList.push(articleId);
       } else if (!state && articlesList.indexOf(articleId) != -1) {
-        articlesList = articlesList.filter(item => item != articleId);
+        articlesList = articlesList.filter((item: string) => item != articleId);
       }
       setCookie('articlesList', JSON.stringify(articlesList), {'max-age': 3600, expires: `Tue, 19 Jan 2038 03:14:07 GMT`});
     });

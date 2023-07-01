@@ -29,7 +29,6 @@ $.gulp.task(`default`, $.gulp.series(
         `imageswebp`,
         `imagescopy`,
         `iconscopy`,
-        `jscopy`,
         `ajaxcopy`,
         `phpcopy`,
         `fontscopy`
